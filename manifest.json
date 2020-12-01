@@ -1,0 +1,34 @@
+{
+  "name": "nightServ",
+  "description": "Ein Nightmode für IServ",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "web_accessible_resources": ["ab.png","whitetrans.png"],
+  "permissions": [
+    "storage",
+    "tabs",
+    "*://*/*"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "nightserv32.png"
+  },
+  "background": {
+    "scripts": [
+      "addon.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*","https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at" : "document_start"
+    }
+  ],
+  "icons": {"32": "nightserv32.png"}
+}

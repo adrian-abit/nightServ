@@ -1,0 +1,121 @@
+/*
+*   Globals
+*/
+
+:root {
+    --darker: rgb(32 33 36);
+    --dark: rgb(41 42 45);
+    --lighterdark: #31353C;
+    --lighterlighterdark: #494c52;
+    --text-white: rgb(232 234 237);
+    --text-gray: rgb(154 160 166);
+    --text-link-blue: #8AB4F8;
+    --border-gray: #5F6368;
+}
+
+body {
+    background-color: var(--darker) !important;
+}
+
+.message,a:link, .iserv-admin-list-field.iserv-admin-list-field-textarea a{
+    color: var(--text-link-blue) !important;
+}
+
+.list-group-item,label,.close,.close span,.btn.btn-primary.hidden-md.hidden-sm.hidden-xs,input,select,textarea,.mailbox-label ,li a, h4,.glyphicon,.divider,.glyphicon-pro,#org,.panel.login,.mt0,.breadcrumb,.item-label,.panel.panel-idesk.panel-primary,.panel.panel-dashboard.panel-default,.panel, .panel-default,.panel-heading,#files,.page-content.inset,.page-content.inset,.file-universal-dropzone-hint {
+    color: var(--text-white) !important;
+}
+
+input,select,textarea,.page-loader,td,.panel.login,.btn.btn-default,.dropdown-menu.multi-level,.content-header.clearfix,#topbar,#sidebar-wrapper,.panel.panel-idesk.panel-primary,.panel.panel-dashboard.panel-default,.panel,.panel-default,.list-group-item.media.mt0,#files,#files tfoot, #files tfoot tr, #files tfoot tr td, #files tfoot tr td div,.files-id.files-name.files-size.files-date.files-path.control,#files tbody td, #files tbody, #files tbody .odd, #files tbody .even,#files tr:hover,.thumbnail-container.row:hover,.hasThumbnails:hover.hasThumbnails td:hover,.dropdown-menu,.well,#crud-table,#crud-table tbody tr,.table.table-hover.mb0,.table.table-hover.mb0 tbody tr,.table-striped>tbody>tr:nth-of-type(odd),.table,.panel-footer {
+    border: none !important;
+}
+
+.help-block,.header-meta span, .nav-divider.mt0, .nav-divider.nav-additional-modules,.col-md-12 .mb.text-secondary,.dataTables_info ,.dropdown-header span.text,.well,#crud-table tbody tr,#crud-table tbody tr,.text-muted,.text-secondary,.timeAgoCalendar{
+    color: var(--text-gray) !important;
+}
+
+.list-group-item,.list-group-item.clearfix,.list-group,.mail-action-bar,.message-row,#topbar,.btn.btn-default, .panel.login,.content-header.clearfix,.breadcrumb,.breadcrumb span.bc.breadcrumb-current,#sidebar-wrapper,.panel-body,#mail-item-list,.panel-footer,.w100,.list-group-item.media.mt0,.collapse.navbar-collapse,#files tfoot, #files tfoot tr, #files tfoot tr td, #files tfoot tr td div,.files-id.files-name.files-size.files-date.files-path.control,.btn-toolbar,.fc-toolbar.fc-header-toolbar,.fc-today-button.btn.btn-default:disabled,.page-content.inset,.well,#crud-table tbody tr,.table,.table>tbody>tr.info>td, .table>tbody>tr.info>th, .table>tbody>tr>td.info, .table>tbody>tr>th.info, .table>tfoot>tr.info>td, .table>tfoot>tr.info>th, .table>tfoot>tr>td.info, .table>tfoot>tr>th.info, .table>thead>tr.info>td, .table>thead>tr.info>th, .table>thead>tr>td.info, .table>thead>tr>th.info, .table.table-hover.mb0 tbody tr,.table-striped>tbody>tr:nth-of-type(odd), .panel-footer{
+    background-color: var(--dark) !important;
+}
+
+.mail-row-unseen.message-row.active,.mailbox:hover,#crud-table tbody tr:hover, tr.text-muted:hover,.text-muted:hover,.odd:hover,.even:hover,tr:hover,.btn.btn-default:hover, button:hover, button:focus,.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default, button:active,.dropdown-menu.multi-level,button:active,.sidebar-nav li a:hover,.panel-heading .panel-title,.panel-heading .panel-title,.mail-item.message:hover,#no-messages:hover,.list-group-item.media.mt0:hover,.dropdown-menu.open,.dropdown-menu.inner,#files tr:hover,.thumbnail-container.row:hover,.hasThumbnails:hover.hasThumbnails td:hover,.dropdown-menu.dropdown-menu-right,.dropdown-menu,.read:hover, .unread:hover{
+    background-color: var(--lighterdark) !important;
+}
+
+.modal-body,.modal-header,.panel.login .panel-heading,.panel.login,.page-content.inset,body,.panel.panel-idesk.panel-primary,.panel.panel-dashboard.panel-default,.panel, .panel-default,.panel-heading,#files,#crud-table{
+    background-color: var(--darker) !important;
+}
+
+.selectize-dropdown.multi.form-control.plugin-remove_button.plugin-restore_on_backspace,.selectize-input.items.not-full,input,select,textarea,.col-md-12.text-center.reqcolspan,.page-loader,.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover{
+    background-color: var(--lighterlighterdark) !important;
+}
+
+#crud-table,table{
+    border-collapse: collapse !important;
+}
+
+/*
+*   Panels
+*/
+.message-row,.mail-item.message,.mail-item{
+    border-bottom: none !important;
+}
+
+.panel.login {
+    border: 2px solid var(--border-gray);
+}
+
+.panel.login .panel-body,.panel.panel-idesk.panel-primary,.panel.panel-dashboard.panel-default,.panel, .panel-default{
+    border-radius: 10px 10px 10px 10px !important;
+}
+
+.panel-heading {    
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    margin-bottom: 10px !important;
+}
+
+.panel-heading .panel-title {
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 0;
+    display: inline-block;
+}
+.panel-title {
+    display: inline !important;
+}
+
+.panel.login .panel-heading,.panel-default .panel-heading{
+    margin-bottom: 20px !important;
+}
+
+
+/*
+*   Sidebar
+*/
+
+#sidebar-wrapper{
+    -webkit-box-shadow: 2px 2px 3px 0px #000;
+    -moz-box-shadow: 2px 2px 3px 0px #000;
+    box-shadow: 2px 2px 3px 0px #000;
+}
+
+/*
+*   Scrollbar
+*/
+
+::-webkit-scrollbar {
+    width: 7.5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--lighterdark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-gray);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #bddeff;
+}
