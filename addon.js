@@ -1,34 +1,30 @@
 chrome.runtime.onInstalled.addListener(function () {
-  console.log("loaded u cunt");
-  chrome.storage.sync.get(["nightServ_enabled"], res => {
-    if(isEmpty(res)){
-        chrome.storage.sync.set({"nightServ_enabled": true});
-    }
+  console.log("THANK YOU FOR CHOOSING NIGHTSERV MADE BY abit systems ^^");
+
+  chrome.storage.local.get(["nightServ_enabled"], res => {
+    if (isEmpty(res))
+      chrome.storage.local.set({ "nightServ_enabled": true });
   });
+
+  fetch(chrome.runtime.getURL("smaller.css"))
+    .then(res => res.text())
+    .then(data => {
+      let su = {};
+      su["nightCSS"] = minify(data);
+      chrome.storage.local.set(su);
+    });
+
 });
 
-var style;
-
-fetch(chrome.runtime.getURL("smaller.css"))
-  .then(res => res.text())
-  .then(data => style = minify(data))
-  .then(() => console.log(style));
-console.log(chrome.runtime.getURL("smaller.css"));
 
 chrome.runtime.onMessage.addListener((m, s, ret) => {
-  console.log(m);
-  if (m == "getData") {
-    let url = s.origin;
-
-    ret({"id" : s.tab.id, "url" : url});
-  } else if (m == "inject"){
-    console.log("inject");
-    ret({"style" : style})
-  }
+  if (m != "getData") ret({ "bad": "request" });
+  let url = s.origin;
+  ret({ "id": s.tab.id, "url": url });
 });
 
 function minify(str) {
- return str
+  return str
     .replace(/([^0-9a-zA-Z\.#])\s+/g, "$1")
     .replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1")
     .replace(/;}/g, "}")
@@ -37,6 +33,3 @@ function minify(str) {
 
 
 function isEmpty(r) { for (var i in r) if (r.hasOwnProperty(i)) return !1; return JSON.stringify(r) === JSON.stringify({}) }
-
-
-//chrome.tabs.insertCSS(s.tab.id, {file: "smaller.css"});

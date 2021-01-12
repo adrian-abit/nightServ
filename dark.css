@@ -3,8 +3,8 @@
 */
 
 :root {
-    --darker: rgb(32 33 36);
-    --dark: rgb(41 42 45);
+    --darker: #202124;
+    --dark: #292A2D;
     --lighterdark: #31353C;
     --lighterlighterdark: #494c52;
     --text-white: rgb(232 234 237);

@@ -3,49 +3,60 @@
 */
 
 :root {
-    --darker: rgb(32 33 36);
-    --dark: rgb(41 42 45);
+    --darker: #202124;
+    --dark: #292A2D;
     --lighterdark: #31353C;
     --lighterlighterdark: #494c52;
-    --text-white: rgb(232 234 237);
-    --text-gray: rgb(154 160 166);
+    --text-white: #E8EAED;
+    --text-gray: #9AA0A6;
     --text-link-blue: #8AB4F8;
     --border-gray: #5F6368;
+}
+
+.sidebar-nav li.sidebar-brand a:hover{
+    background-color: transparent !important;
 }
 
 body {
     background-color: var(--darker) !important;
 }
 
-.message,a:link, .iserv-admin-list-field.iserv-admin-list-field-textarea a{
-    color: var(--text-link-blue) !important;
+.section hr{
+    border-top: 1px solid var(--dark); 
 }
 
-.list-group-item,label,.close,.close span,.btn.btn-primary.hidden-md.hidden-sm.hidden-xs,input,select,textarea,.mailbox-label ,li a, h4,.glyphicon,.divider,.glyphicon-pro,#org,.panel.login,.mt0,.breadcrumb,.item-label,.panel.panel-idesk.panel-primary,.panel.panel-dashboard.panel-default,.panel, .panel-default,.panel-heading,#files,.page-content.inset,.page-content.inset,.file-universal-dropzone-hint {
+.success.odd{
+    color: var(--darker);
+}
+
+a:link, a:link.btn.btn-default, div.col-md-12 div.panel.panel-default div.panel-body ul li a:link, .btn.btn-default.dropdown-toggle, .message,a:link, .iserv-admin-list-field.iserv-admin-list-field-textarea a{
+    color: var(--text-link-blue) !important;
+}
+.list-header, .no-room-selected div, .dropdown-button, .date-container, .bubble-container, p, li .bc, .notification-preview.list-unstyled li, .dropdown-header, .btn.btn-primary, .alert, .btn.btn-primary.flex-toolbar-item,.jconfirm-title-c,.jconfirm-content,.jconfirm-box, .selectize-input.has-items div, li.dropdown a.dropdown-toggle,li a,.no-results, #sidebar-wrapper .sidebar-nav.nav-push-badge .sidebar-profile .dropdown .dropdown-toggle, a[role=menuitem],.dropdown-menu li.notification,.dropdown-container.notifications, .list-group-item,label,.close,.close span,.btn.btn-primary.hidden-md.hidden-sm.hidden-xs,input,select,textarea,.mailbox-label , h4,.glyphicon,.divider,.glyphicon-pro,#org,.panel.login,.mt0,.breadcrumb,.item-label,.panel.panel-idesk.panel-primary,.panel.panel-dashboard.panel-default,.panel, .panel-default,.panel-heading,#files,.page-content.inset,.page-content.inset,.file-universal-dropzone-hint {
     color: var(--text-white) !important;
 }
 
-input,select,textarea,.page-loader,td,.panel.login,.btn.btn-default,.dropdown-menu.multi-level,.content-header.clearfix,#topbar,#sidebar-wrapper,.panel.panel-idesk.panel-primary,.panel.panel-dashboard.panel-default,.panel,.panel-default,.list-group-item.media.mt0,#files,#files tfoot, #files tfoot tr, #files tfoot tr td, #files tfoot tr td div,.files-id.files-name.files-size.files-date.files-path.control,#files tbody td, #files tbody, #files tbody .odd, #files tbody .even,#files tr:hover,.thumbnail-container.row:hover,.hasThumbnails:hover.hasThumbnails td:hover,.dropdown-menu,.well,#crud-table,#crud-table tbody tr,.table.table-hover.mb0,.table.table-hover.mb0 tbody tr,.table-striped>tbody>tr:nth-of-type(odd),.table,.panel-footer {
+.fc-toolbar, #calendar, .page-content.inset,.collapse.navbar-collapse,.chat-select-header, .footer-container, .chat-header, .control-btn, .timeline-control, .member-header, .content-container, .menu-item, .floating-modal.panel, #search-wrapper, .entry-container, .control-btn, .list-group-item, .nav.nav-tabs, .nav.nav-tabs .active a:link, .dropdown-header,.panel-heading, #message-header, #message-actions, .selectize-input, .jconfirm-box-container,.jconfirm-box,.mail-action-bar, th, .panel.panel-inverse.panel-plan .panel-heading,.panel.panel-inverse.panel-plan .panel-body,.sidebar-brand, .nav-divider, .dropdown-footer.text-center,.dropdown-menu, .dropdown-menu .notification, .dropdown-container.notifications,input,select,textarea,.page-loader,td,.panel.login,.btn.btn-default,.dropdown-menu.multi-level,.content-header.clearfix,#topbar,#sidebar-wrapper,.panel.panel-idesk.panel-primary,.panel.panel-dashboard.panel-default,.panel,.panel-default,.list-group-item.media.mt0,#files,#files tfoot, #files tfoot tr, #files tfoot tr td, #files tfoot tr td div,.files-id.files-name.files-size.files-date.files-path.control,#files tbody td, #files tbody, #files tbody .odd, #files tbody .even,#files tr:hover,.thumbnail-container.row:hover,.hasThumbnails:hover.hasThumbnails td:hover,.dropdown-menu,.well,#crud-table,#crud-table tbody tr,.table.table-hover.mb0,.table.table-hover.mb0 tbody tr,.table-striped>tbody>tr:nth-of-type(odd),.table,.panel-footer {
     border: none !important;
 }
 
-.help-block,.header-meta span, .nav-divider.mt0, .nav-divider.nav-additional-modules,.col-md-12 .mb.text-secondary,.dataTables_info ,.dropdown-header span.text,.well,#crud-table tbody tr,#crud-table tbody tr,.text-muted,.text-secondary,.timeAgoCalendar{
+.room-event div, .category, .name-line .time, .last-message, .date, .nav-divider, .dropdown-menu .notification .media .media-body .notification-meta,.help-block,.header-meta span,.col-md-12 .mb.text-secondary,.dataTables_info ,.dropdown-header span.text,.well,#crud-table tbody tr,#crud-table tbody tr,.text-muted,.text-secondary,.timeAgoCalendar{
     color: var(--text-gray) !important;
 }
 
-.list-group-item,.list-group-item.clearfix,.list-group,.mail-action-bar,.message-row,#topbar,.btn.btn-default, .panel.login,.content-header.clearfix,.breadcrumb,.breadcrumb span.bc.breadcrumb-current,#sidebar-wrapper,.panel-body,#mail-item-list,.panel-footer,.w100,.list-group-item.media.mt0,.collapse.navbar-collapse,#files tfoot, #files tfoot tr, #files tfoot tr td, #files tfoot tr td div,.files-id.files-name.files-size.files-date.files-path.control,.btn-toolbar,.fc-toolbar.fc-header-toolbar,.fc-today-button.btn.btn-default:disabled,.page-content.inset,.well,#crud-table tbody tr,.table,.table>tbody>tr.info>td, .table>tbody>tr.info>th, .table>tbody>tr>td.info, .table>tbody>tr>th.info, .table>tfoot>tr.info>td, .table>tfoot>tr.info>th, .table>tfoot>tr>td.info, .table>tfoot>tr>th.info, .table>thead>tr.info>td, .table>thead>tr.info>th, .table>thead>tr>td.info, .table>thead>tr>th.info, .table.table-hover.mb0 tbody tr,.table-striped>tbody>tr:nth-of-type(odd), .panel-footer{
+#message-header, .btn-group.bootstrap-select.form-control.show-tick,.nav-divider.mt0, .nav-divider.nav-additional-modules,.dropdown-footer.text-center, div.dropdown-container.notifications div.dropdown-toolbar.clearfix, .list-group-item,.list-group-item.clearfix,.list-group,.mail-action-bar,.message-row,#topbar,.btn.btn-default, .panel.login,.content-header.clearfix,.breadcrumb,.breadcrumb span.bc.breadcrumb-current,#sidebar-wrapper,.panel-body,#mail-item-list,.panel-footer,.w100,.list-group-item.media.mt0,.collapse.navbar-collapse,#files tfoot, #files tfoot tr, #files tfoot tr td, #files tfoot tr td div,.files-id.files-name.files-size.files-date.files-path.control,.btn-toolbar,.fc-toolbar.fc-header-toolbar,.fc-today-button.btn.btn-default:disabled,.page-content.inset,.well,#crud-table tbody tr,.table,.table>tbody>tr.info>td, .table>tbody>tr.info>th, .table>tbody>tr>td.info, .table>tbody>tr>th.info, .table>tfoot>tr.info>td, .table>tfoot>tr.info>th, .table>tfoot>tr>td.info, .table>tfoot>tr>th.info, .table>thead>tr.info>td, .table>thead>tr.info>th, .table>thead>tr>td.info, .table>thead>tr>th.info, .table.table-hover.mb0 tbody tr,.table-striped>tbody>tr:nth-of-type(odd), .panel-footer{
     background-color: var(--dark) !important;
 }
 
-.mail-row-unseen.message-row.active,.mailbox:hover,#crud-table tbody tr:hover, tr.text-muted:hover,.text-muted:hover,.odd:hover,.even:hover,tr:hover,.btn.btn-default:hover, button:hover, button:focus,.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default, button:active,.dropdown-menu.multi-level,button:active,.sidebar-nav li a:hover,.panel-heading .panel-title,.panel-heading .panel-title,.mail-item.message:hover,#no-messages:hover,.list-group-item.media.mt0:hover,.dropdown-menu.open,.dropdown-menu.inner,#files tr:hover,.thumbnail-container.row:hover,.hasThumbnails:hover.hasThumbnails td:hover,.dropdown-menu.dropdown-menu-right,.dropdown-menu,.read:hover, .unread:hover{
+.messenger-search, .below-chat-select-header, .footer-container, .chat-select-header, .popover, .glyphicon-pro.glyphicon-pro-chat, .dropdown-button, .member-header, .reply-view, .menu-item, .btn.emoji-button, .flex-item, .flex-column, .flip-item.chat-select-button.selected, .bubble-container, .control-btn, .nav.nav-tabs, .nav.nav-tabs .active a:link, .dropdown-menu .divider, .table > tbody > tr.active > td, .message-row.active, .jconfirm-box-container,.jconfirm-box,.selectize-input.has-items div, .no-results, .mail-row-unseen.message-row.active,.mailbox:hover,#crud-table tbody tr:hover, tr.text-muted:hover,.text-muted:hover,.odd:hover,.even:hover,tr:hover,.btn.btn-default:hover, button:hover, button:focus,.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default, button:active,.dropdown-menu.multi-level,button:active,.sidebar-nav li a:hover,.panel-heading .panel-title,.panel-heading .panel-title,.mail-item.message:hover,#no-messages:hover,.list-group-item.media.mt0:hover,.dropdown-menu.open,.dropdown-menu.inner,#files tr:hover,.thumbnail-container.row:hover,.hasThumbnails:hover.hasThumbnails td:hover,.dropdown-menu.dropdown-menu-right,.dropdown-menu,.read:hover, .unread:hover{
     background-color: var(--lighterdark) !important;
 }
 
-.modal-body,.modal-header,.panel.login .panel-heading,.panel.login,.page-content.inset,body,.panel.panel-idesk.panel-primary,.panel.panel-dashboard.panel-default,.panel, .panel-default,.panel-heading,#files,#crud-table{
+#search-wrapper, .outer-emoji-container, .modal-body,.modal-header,.panel.login .panel-heading,.panel.login,.page-content.inset,body,.panel.panel-idesk.panel-primary,.panel.panel-dashboard.panel-default,.panel, .panel-default,.panel-heading,#files,#crud-table{
     background-color: var(--darker) !important;
 }
 
-.selectize-dropdown.multi.form-control.plugin-remove_button.plugin-restore_on_backspace,.selectize-input.items.not-full,input,select,textarea,.col-md-12.text-center.reqcolspan,.page-loader,.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover{
+.dropdown-button:hover, .icon-row.clickable:hover, .user-indicator:hover, .member-name:hover, .event.selected.small-spacer, .menu-item:hover, .event.selectable.selected, .flip-item.chat-select-button:hover, .date-container div, .room-event div, .event.selectable:hover, .batch-actions.form-inline, .batch-actions-container, .alert,.dropdown-menu .notification:hover,.selectize-dropdown.multi.form-control.plugin-remove_button.plugin-restore_on_backspace,.selectize-input.items.not-full,input,select,textarea,.col-md-12.text-center.reqcolspan,.page-loader,.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover{
     background-color: var(--lighterlighterdark) !important;
 }
 
@@ -53,10 +64,19 @@ input,select,textarea,.page-loader,td,.panel.login,.btn.btn-default,.dropdown-me
     border-collapse: collapse !important;
 }
 
+.btn-group.bootstrap-select.form-control.show-tick, .control-btn{
+    box-shadow: 1px 1px 1px 1px var(--darker);
+}
+
+
+.navbar-default .navbar-nav>li>a{
+    border-bottom: 5px solid var(--text-gray);
+}
+
 /*
 *   Panels
 */
-.message-row,.mail-item.message,.mail-item{
+.dropdown-container.notifications .dropdown-toolbar.clearfix, .dropdown-menu .notification, .message-row,.mail-item.message,.mail-item{
     border-bottom: none !important;
 }
 
@@ -90,16 +110,6 @@ input,select,textarea,.page-loader,td,.panel.login,.btn.btn-default,.dropdown-me
 
 
 /*
-*   Sidebar
-*/
-
-#sidebar-wrapper{
-    -webkit-box-shadow: 2px 2px 3px 0px #000;
-    -moz-box-shadow: 2px 2px 3px 0px #000;
-    box-shadow: 2px 2px 3px 0px #000;
-}
-
-/*
 *   Scrollbar
 */
 
@@ -118,4 +128,52 @@ input,select,textarea,.page-loader,td,.panel.login,.btn.btn-default,.dropdown-me
 
 ::-webkit-scrollbar-thumb:hover {
     background: #bddeff;
+}
+
+/*
+Copyright footer
+*/
+
+#nightservfooter{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-align: right;
+}
+
+#nightservinfo{
+    color: var(--text-gray);
+}
+
+#nightservinfo:hover{
+    color: var(--text-gray);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidebar-brand a img{
+    filter: gray;
+    -webkit-filter: grayscale(1);
+}
+
+.sidebar-brand a{
+    text-align: center;
+    display: block;
+}
+
+#watermark{
+    position: fixed;
+    top: 110px;
+    right: 10%;
+    transform: translate(-50%, -50%);
+    filter: gray;
+    -webkit-filter: grayscale(1);
+    width: 200px;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+#content{
+    position: relative;
 }

@@ -1,16 +1,16 @@
 let enabled = true;
 
 document.getElementById("abit").addEventListener("click", () => {
-  console.log("click");
   window.open(
-    "https://abit.dev/",
+    "https://nightserv.adrianbit.tech/",
     "_blank"
   );
 });
 
 document.getElementById("changeNight").addEventListener("click", () => {
   enabled = !enabled;
-  chrome.storage.sync.set({ "nightServ_enabled": enabled });
+  chrome.storage.local.set({ "nightServ_enabled": enabled });
+  chrome.storage.local.get("nightServ_enabled", res => console.log(res));
   changeText();
 });
 
@@ -25,10 +25,10 @@ function changeText() {
 
 }
 
-chrome.storage.sync.get(["nightServ_enabled"], res => {
-  if (isEmpty(res)) {
-    chrome.storage.sync.set({ "nightServ_enabled": true });
-  } else if (!res["nightServ_enabled"])
+chrome.storage.local.get(["nightServ_enabled"], res => {
+  if (isEmpty(res))
+    chrome.storage.local.set({ "nightServ_enabled": true });
+  else if (!res["nightServ_enabled"])
     enabled = false;
 
   changeText();
