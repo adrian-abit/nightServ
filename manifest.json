@@ -1,9 +1,9 @@
 {
   "name": "nightServ",
   "description": "Ein Nightmode für IServ",
-  "version": "0.2.4",
+  "version": "1.0.0",
   "author" : "Adrian @ abit systems",
-  "version_name": "dev",
+  "version_name": "beta",
   "manifest_version": 2,
   "web_accessible_resources": ["ab.png","whitetrans.png","nightservfull.svg","Nr.svg"],
   "permissions": [
