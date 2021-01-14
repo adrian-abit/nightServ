@@ -73,10 +73,10 @@ chrome.runtime.sendMessage("getData", r => {
 
                 //change school text
                 el = document.getElementsByClassName("brand");
-                if (el.length >= 1) {
+                if (el.length > 0) {
                     for (let i = 0; i < el.length; i++) {
                         let manifest = chrome.runtime.getManifest();
-                        el[i].textContent = manifest.name + " v" + manifest.version + manifest.version_name;
+                        el[i].textContent = manifest.name + " v" + manifest.version_name;
                     }
                 }
 
