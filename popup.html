@@ -4,7 +4,7 @@
 <head>
   <style>
     body {
-      height: 170px;
+      height: 220px;
       width: 500px;
       padding: 0;
       margin: 0;
@@ -65,7 +65,6 @@
     }
 
     button {
-      width: 100%;
       border: 1px solid #5F6368;
       border-radius: 4px;
       background-color: #202124;
@@ -95,6 +94,18 @@
       font-weight: 700;
     }
 
+    #changeNight{
+      width: 100%;
+    }
+
+    #changeD{
+      width: 49%;
+    }
+
+    #changeVD{
+      width: 49%;
+    }
+
   </style>
 </head>
 
@@ -109,12 +120,14 @@
 
     <div class="buttonwrapper">
       <button id="changeNight">Nightmode Ausschalten</button>
+      <button id="changeVD">Sehr Dunkel</button>
+      <button id="changeD">Dunkel</button>
       <a id="refreshnotice">Aktualisiere IServ um die &Auml;nderungen zu sehen.</a>
     </div>
 
     <footer>
       <div>
-        <a style="font-size: 12px;">nightServ entwickelt von Adrian Bit @ abit systems - </a><a id="abit" style="font-size: 12px;">adrianbit.tech/nightserv</a>
+        <a style="font-size: 12px;">nightServ entwickelt von Adrian Bit @ abit systems - </a><a id="abit" style="font-size: 12px;">nightserv.abit.dev</a>
       </div>
     </footer>
 
