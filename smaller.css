@@ -35,7 +35,7 @@ div[class^="unfold-container level"], .post-fold-toggle, .post-wrapper, .level-w
     background-color: var(--dark) !important;
 }
 
-.fc-day-header.fc-today, .fc-day.fc-today, .unfold-container, .level-wrapper, .unfold-content, .popover-content, .input-group-addon ,.modal-content, .prev, .picker-switch, .next, div[class^="datepicker-"] .table-condensed, .fc-axis.fc-week-number, .fc-day-header, .modal-footer, .dow, .chat-view, .chat-input, .notification, .messenger-search, .below-chat-select-header, .footer-container, .chat-select-header, .popover, .glyphicon-pro.glyphicon-pro-chat, .dropdown-button, .member-header, .reply-view, .menu-item, .btn.emoji-button, .flex-item, .flex-column, .flip-item.chat-select-button.selected, .bubble-container, .control-btn, .nav.nav-tabs, .nav.nav-tabs .active a:link, .dropdown-menu .divider, .table > tbody > tr.active > td, .message-row.active, .jconfirm-box-container,.jconfirm-box,.selectize-input.has-items div, .no-results, .mail-row-unseen.message-row.active,.mailbox:hover,#crud-table tbody tr:hover, tr.text-muted:hover,.text-muted:hover,.odd:hover,.even:hover,tr:hover,.btn.btn-default:hover, button:hover, button:focus,.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default, button:active,.dropdown-menu.multi-level,button:active,.sidebar-nav li a:hover,.panel-heading .panel-title,.panel-heading .panel-title,.mail-item.message:hover,#no-messages:hover,.list-group-item.media.mt0:hover,.dropdown-menu.open,.dropdown-menu.inner,#files tr:hover,.thumbnail-container.row:hover,.hasThumbnails:hover.hasThumbnails td:hover,.dropdown-menu.dropdown-menu-right,.dropdown-menu,.read:hover, .unread:hover{
+.fc-divider ,.fc-axis, .fc-axis.fc-time, .fc-day-header.fc-today, .fc-day.fc-today, .unfold-container, .level-wrapper, .unfold-content, .popover-content, .input-group-addon ,.modal-content, .prev, .picker-switch, .next, div[class^="datepicker-"] .table-condensed, .fc-axis.fc-week-number, .fc-day-header, .modal-footer, .dow, .chat-view, .chat-input, .notification, .messenger-search, .below-chat-select-header, .footer-container, .chat-select-header, .popover, .glyphicon-pro.glyphicon-pro-chat, .dropdown-button, .member-header, .reply-view, .menu-item, .btn.emoji-button, .flex-item, .flex-column, .flip-item.chat-select-button.selected, .bubble-container, .control-btn, .nav.nav-tabs, .nav.nav-tabs .active a:link, .dropdown-menu .divider, .table > tbody > tr.active > td, .message-row.active, .jconfirm-box-container,.jconfirm-box,.selectize-input.has-items div, .no-results, .mail-row-unseen.message-row.active,.mailbox:hover,#crud-table tbody tr:hover, tr.text-muted:hover,.text-muted:hover,.odd:hover,.even:hover,tr:hover,.btn.btn-default:hover, button:hover, button:focus,.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default, button:active,.dropdown-menu.multi-level,button:active,.sidebar-nav li a:hover,.panel-heading .panel-title,.panel-heading .panel-title,.mail-item.message:hover,#no-messages:hover,.list-group-item.media.mt0:hover,.dropdown-menu.open,.dropdown-menu.inner,#files tr:hover,.thumbnail-container.row:hover,.hasThumbnails:hover.hasThumbnails td:hover,.dropdown-menu.dropdown-menu-right,.dropdown-menu,.read:hover, .unread:hover{
     background-color: var(--lighterdark) !important;
 }
 
@@ -140,23 +140,6 @@ tr.fc-minor td.fc-axis.fc-time, tr.fc-minor td{
 Copyright footer
 */
 
-#nightservfooter{
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    text-align: right;
-}
-
-#nightservinfo{
-    color: var(--text-gray);
-}
-
-#nightservinfo:hover{
-    color: var(--text-gray);
-    text-decoration: none;
-    cursor: pointer;
-}
-
 .sidebar-brand a img{
     filter: gray;
     -webkit-filter: grayscale(1);
@@ -167,19 +150,4 @@ Copyright footer
     display: block;
 }
 
-#watermark{
-    position: fixed;
-    top: 110px;
-    right: 10%;
-    transform: translate(-50%, -50%);
-    filter: gray;
-    -webkit-filter: grayscale(1);
-    width: 200px;
-    z-index: 9999;
-    pointer-events: none;
-    opacity: 0.5;
-}
 
-#content{
-    position: relative;
-}
