@@ -60,6 +60,10 @@ td.day.active, td.day.today.active{
     box-shadow: 1px 1px 1px 1px var(--darker);
 }
 
+.text-input, .text-input:focus{
+    box-shadow: none !important;
+}
+
 
 tr.fc-minor td.fc-axis.fc-time, tr.fc-minor td{
     border-bottom: 1px dashed var(--border-gray) !important;

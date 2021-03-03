@@ -1,7 +1,7 @@
 {
   "name": "nightServ",
   "description": "Ein Nightmode für IServ",
-  "version": "21.3.0201",
+  "version": "21.3.0301",
   "author" : "Adrian @ abit systems",
   "version_name": "beta-210302#01",
   "manifest_version": 2,
