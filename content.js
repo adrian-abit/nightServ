@@ -53,7 +53,7 @@ chrome.storage.local.get([url, "nightServ_enabled"], res => {
                 let img = el.firstChild.nextElementSibling.firstChild.nextElementSibling.firstChild.nextElementSibling;
                 img.src = uri;
                 img.srcset = uri;
-                img.width = 125;
+                img.width = 150;
             }
 
             //change school text
@@ -72,7 +72,7 @@ chrome.storage.local.get([url, "nightServ_enabled"], res => {
                 button.setAttribute("class", "nav-item nav-module menu-item-nightserv");
 
                 let buttoncontent = document.createElement("a");
-                buttoncontent.setAttribute("href", "https://nightserv.abit.dev/feedback");
+                buttoncontent.setAttribute("href", "https://nightserv.abit.dev#feedback");
 
                 let buttonimg = document.createElement("img");
                 buttonimg.setAttribute("class", "nav-svg-icon");
@@ -85,7 +85,7 @@ chrome.storage.local.get([url, "nightServ_enabled"], res => {
                 buttoncontent.appendChild(buttonlabel);
 
                 button.appendChild(buttoncontent);
-                el.appendChild(button)
+                el.insertBefore(button, el.firstChild)
             }
         });
 

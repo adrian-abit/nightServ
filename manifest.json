@@ -1,36 +1,40 @@
 {
-  "name": "nightServ",
-  "description": "Ein Nightmode für IServ",
-  "version": "21.3.0301",
-  "author" : "Adrian @ abit systems",
-  "version_name": "beta-210302#01",
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDesc__",
+  "version": "1.0.0",
+  "author": "Adrian @ abit systems",
+  "version_name": "1",
   "manifest_version": 2,
-  "web_accessible_resources": ["nightservfull.svg", "nightservN48.png", "nightserv.svg", "smaller.css", "N.svg"],
-  "permissions": [
-    "storage",
-    "tabs",
-    "*://*/*"
+  "default_locale": "de",
+  "web_accessible_resources": [
+    "nightservfull.svg",
+    "nightservN48.png",
+    "nightserv.svg",
+    "smaller.css",
+    "N.svg",
+    "100users.html"
   ],
+  "permissions": ["storage", "tabs", "*://*/*"],
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": "nightservN128.png"
   },
   "background": {
-    "scripts": [
-      "addon.js"
-    ],
+    "scripts": ["addon.js"],
     "persistent": false
   },
   "content_scripts": [
     {
-      "matches": [
-        "http://*/*","https://*/*"
-      ],
-      "js": [
-        "content.js"
-      ],
-      "run_at" : "document_start"
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
     }
   ],
-  "icons": {"128": "nightservN128.png","16" : "nightservN16.png", "19": "nightservN19.png", "38": "nightservN38.png", "48":"nightservN48.png"}
+  "icons": {
+    "128": "nightservN128.png",
+    "16": "nightservN16.png",
+    "19": "nightservN19.png",
+    "38": "nightservN38.png",
+    "48": "nightservN48.png"
+  }
 }
