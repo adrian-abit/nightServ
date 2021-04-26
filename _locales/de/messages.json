@@ -1,8 +1,8 @@
 {
-  "appName": {
-    "message": "nightServ - Ein Nightmode für IServ"
+  "name": {
+    "message": "nightServ - Das Addon für IServ®"
   },
-  "appDesc": {
-    "message": "Ein Nightmode für IServ"
+  "desc": {
+    "message": "Themes für IServ®"
   }
 }

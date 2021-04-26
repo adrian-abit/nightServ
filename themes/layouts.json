@@ -1,0 +1,13 @@
+{
+  "_comment": "NEVER CHANGE THE ORDER IN THE ARRAYS. YOU CAN ***DUCK THINGS UP***",
+  "layouts": [
+    {
+      "id": 0,
+      "iID": "default",
+      "displayname": "Standartlayout (nightServ layout)",
+      "themes": [
+        { "id": 0, "name": "Dunkel", "img": "dark.png", "iID": "dat-dark" }
+      ]
+    }
+  ]
+}

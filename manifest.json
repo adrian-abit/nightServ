@@ -1,23 +1,21 @@
 {
-  "name": "__MSG_appName__",
-  "description": "__MSG_appDesc__",
-  "version": "69.1.0.0",
+  "name": "__MSG_name__",
+  "description": "__MSG_desc__",
+  "version": "100",
   "author": "Adrian @ abit systems",
   "version_name": "1",
   "manifest_version": 2,
   "default_locale": "de",
   "web_accessible_resources": [
-    "nightservfull.svg",
-    "nightservN48.png",
-    "nightserv.svg",
-    "smaller.css",
-    "N.svg",
-    "100users.html"
+    "assets/nightservfull.svg",
+    "assets/nightservN48.png",
+    "assets/nightserv.svg",
+    "assets/N.svg"
   ],
   "permissions": ["storage", "tabs", "*://*/*"],
   "browser_action": {
-    "default_popup": "popup.html",
-    "default_icon": "nightservN128.png"
+    "default_popup": "pages/popup/popup.html",
+    "default_icon": "assets/nightservN128.png"
   },
   "background": {
     "scripts": ["addon.js"],
@@ -31,10 +29,10 @@
     }
   ],
   "icons": {
-    "128": "nightservN128.png",
-    "16": "nightservN16.png",
-    "19": "nightservN19.png",
-    "38": "nightservN38.png",
-    "48": "nightservN48.png"
+    "128": "assets/nightservN128.png",
+    "16": "assets/nightservN16.png",
+    "19": "assets/nightservN19.png",
+    "38": "assets/nightservN38.png",
+    "48": "assets/nightservN48.png"
   }
 }

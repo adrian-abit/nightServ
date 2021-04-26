@@ -1,14 +1,18 @@
-chrome.runtime.onInstalled.addListener(() => {
+chrome.runtime.onInstalled.addListener(reason => {
   console.log("THANK YOU FOR CHOOSING NIGHTSERV MADE BY abit systems ^^");
+  if (reason.reason == "install") {
+    
+    chrome.storage.local.get(["nightServ_enabled"], (res) => {
+      if (isEmpty(res)) chrome.storage.local.set({ nightServ_enabled: true });
+    });
 
-  chrome.storage.local.get(["nightServ_enabled"], (res) => {
-    if (isEmpty(res)) chrome.storage.local.set({ nightServ_enabled: true });
-  });
-
+    chrome.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
+  }
 });
 
 chrome.storage.local.set({ "iserv.de": false });
 
+//TODO: Change listener to inject right layout and theme
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   if (!tab.url.startsWith("http")) return;
   let url = extractDomain(tab.url);
@@ -17,13 +21,12 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     if (r[url] && r["nightServ_enabled"]) {
       let style = {};
       style["runAt"] = "document_start";
-      style["file"] = "smaller.css";
+      style["file"] = "style.css";
 
       chrome.tabs.insertCSS(tabId, style);
     }
   });
 });
-
 
 function extractDomain(url) {
   return url.replace(
