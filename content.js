@@ -72,7 +72,8 @@ chrome.storage.local.get([url, "nightServ_enabled"], res => {
                 button.setAttribute("class", "nav-item nav-module menu-item-nightserv");
 
                 let buttoncontent = document.createElement("a");
-                buttoncontent.setAttribute("href", "https://nightserv.abit.dev#feedback");
+                let iur = chrome.runtime.getURL("pages/settings/settings.html");
+                buttoncontent.setAttribute("href", iur);
 
                 let buttonimg = document.createElement("img");
                 buttonimg.setAttribute("class", "nav-svg-icon");
@@ -81,7 +82,7 @@ chrome.storage.local.get([url, "nightServ_enabled"], res => {
 
                 let buttonlabel = document.createElement("span");
                 buttonlabel.setAttribute("class", "item-label");
-                buttonlabel.appendChild(document.createTextNode("nightServ Feedback"))
+                buttonlabel.appendChild(document.createTextNode("nightServ Themes"))
                 buttoncontent.appendChild(buttonlabel);
 
                 button.appendChild(buttoncontent);

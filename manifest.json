@@ -10,7 +10,10 @@
     "assets/nightservfull.svg",
     "assets/nightservN48.png",
     "assets/nightserv.svg",
-    "assets/N.svg"
+    "assets/N.svg",
+    "pages/settings/settings.html",
+    "pages/settings/settings.js",
+    "pages/settings/settings.css"
   ],
   "permissions": ["storage", "tabs", "*://*/*"],
   "browser_action": {

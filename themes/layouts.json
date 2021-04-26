@@ -6,7 +6,32 @@
       "iID": "default",
       "displayname": "Standartlayout (nightServ layout)",
       "themes": [
-        { "id": 0, "name": "Dunkel", "img": "dark.png", "iID": "dat-dark" }
+        { "id": 0, "name": "Dunkel", "img": "dark.png", "iID": "dat-dark" },
+        { "id": 1, "name": "Hell", "img": "light.png", "iID": "dat-light" },
+        {
+          "id": 2,
+          "name": "\"Nacht\"",
+          "img": "night.png",
+          "iID": "dat-night"
+        },
+        {
+          "id": 3,
+          "name": "purple aesthetic",
+          "img": "purpleaes.png",
+          "iID": "dat-p-pink"
+        },
+        {
+          "id": 4,
+          "name": "green aesthetic",
+          "img": "greem.png",
+          "iID": "dat-p-green"
+        },
+        {
+          "id": 5,
+          "name": "Galaxy",
+          "img": "galaxy.jpg",
+          "iID": "dat-galaxy"
+        }
       ]
     }
   ]
