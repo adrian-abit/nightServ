@@ -49,6 +49,11 @@ function clickedTheme(event, theme) {
   })
 }
 
+document.getElementById("feedbackbtn").addEventListener("click", e => {
+  e.preventDefault();
+  location.href = "https://nightserv.abit.dev/#feedback"
+})
+
 /** ugly shit but does what it's supposed to do */
 function createO(callback) {
   chrome.storage.local.get(["nightservdesign"], (r) => {
