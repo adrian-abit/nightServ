@@ -1,9 +1,9 @@
 {
   "name": "__MSG_name__",
   "description": "__MSG_desc__",
-  "version": "110.2",
+  "version": "110.3",
   "author": "Adrian @ abit systems",
-  "version_name": "1.1 rev2",
+  "version_name": "1.1 rev3",
   "manifest_version": 2,
   "default_locale": "de",
   "web_accessible_resources": [
