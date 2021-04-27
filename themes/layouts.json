@@ -61,6 +61,20 @@
           "img": "galaxy.jpg",
           "iID": "dat-galaxy",
           "exp": true
+        },
+        {
+          "id": 8,
+          "name": "blend s",
+          "img": "weeb.jpg",
+          "iID": "dat-blends",
+          "exp": true
+        },
+        {
+          "id": 9,
+          "name": "itadori",
+          "img": "jjk.jpg",
+          "iID": "dat-jjk",
+          "exp": true
         }
       ]
     }
