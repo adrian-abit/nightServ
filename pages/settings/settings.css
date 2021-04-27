@@ -131,6 +131,20 @@ div#badge {
     right: 0;
   }
 
+  #feedbackbtn{
+    background: transparent;
+    color: #fff;
+    font-size: 22px;
+    border: 3px solid var(--border-gray);
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  #feedbackbtn:hover{
+    border: 3px solid var(--text-link-blue);
+  }
+
   /**
   overlay
   **/

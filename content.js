@@ -69,7 +69,7 @@ chrome.storage.local.get([url, "nightServ_enabled"], res => {
             el = document.getElementById("menu-wrapper");
             if (el != null && el != undefined) {
                 let button = document.createElement("li");
-                button.setAttribute("class", "nav-item nav-module menu-item-nightserv");
+                button.setAttribute("class", "nav-item menu-item-nightserv");
 
                 let buttoncontent = document.createElement("a");
                 let iur = chrome.runtime.getURL("pages/settings/settings.html");
