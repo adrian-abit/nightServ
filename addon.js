@@ -7,6 +7,12 @@ chrome.runtime.onInstalled.addListener((reason) => {
 
     chrome.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
   }
+  if (reason.reason == "update") {
+    chrome.storage.local.get(["nightservdesign"], (r) => {
+      if (isEmpty(r))
+        chrome.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
+    });
+  }
 });
 
 chrome.storage.local.set({ "iserv.de": false });
@@ -15,7 +21,7 @@ chrome.storage.local.set({ "iserv.de": false });
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   if (!tab.url.startsWith("http")) return;
   let url = extractDomain(tab.url);
-  if(changeInfo.status != "loading") return;
+  if (changeInfo.status != "loading") return;
   chrome.storage.local.get(
     [url, "nightServ_enabled", "nightservdesign"],
     (r) => {

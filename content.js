@@ -84,7 +84,10 @@ chrome.storage.local.get([url, "nightServ_enabled"], res => {
                 buttonlabel.setAttribute("class", "item-label");
                 buttonlabel.appendChild(document.createTextNode("nightServ Themes"))
                 buttoncontent.appendChild(buttonlabel);
-
+                let badge = document.createElement("a")
+                badge.textContent = "NEU!";
+                badge.id = "nsbadgenew";
+                buttoncontent.appendChild(badge);
                 button.appendChild(buttoncontent);
                 el.insertBefore(button, el.firstChild)
             }

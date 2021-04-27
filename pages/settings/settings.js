@@ -24,7 +24,7 @@ function fade(element) {
       element.style.opacity = op;
       element.style.filter = 'alpha(opacity=' + op * 100 + ")";
       op -= op * 0.1;
-  }, 20);
+  }, 30);
 }
 
 function unfade(element, callback) {
@@ -38,13 +38,15 @@ function unfade(element, callback) {
       element.style.opacity = op;
       element.style.filter = 'alpha(opacity=' + op * 100 + ")";
       op += op * 0.1;
-  }, 20);
+  }, 10);
 }
 
 function clickedTheme(event, theme) {
-  let iID = theme.id.replace("theme-", "");
-  chrome.storage.local.set({nightservdesign : idmap.get(iID)});
-  unfade(document.getElementById("overlay"), () =>  location.reload())
+  unfade(document.getElementById("overlay"), () => { 
+    let iID = theme.id.replace("theme-", "");
+    chrome.storage.local.set({nightservdesign : idmap.get(iID)});
+    location.reload()
+  })
 }
 
 /** ugly shit but does what it's supposed to do */
@@ -74,6 +76,12 @@ function createO(callback) {
             actext.id = "selectedtext";
             actext.textContent = "Ausgewählt";
             tdiv.appendChild(actext);
+          }
+          if(theme.exp){
+            let exp = document.createElement("a");
+            exp.textContent = "experimentell";
+            exp.classList.add("expreimental");
+            tdiv.appendChild(exp);
           }
           let name = document.createElement("h2");
           name.classList.add("themename");

@@ -6,31 +6,61 @@
       "iID": "default",
       "displayname": "Standartlayout (nightServ layout)",
       "themes": [
-        { "id": 0, "name": "Dunkel", "img": "dark.png", "iID": "dat-dark" },
-        { "id": 1, "name": "Hell", "img": "light.png", "iID": "dat-light" },
+        {
+          "id": 0,
+          "name": "dunkel",
+          "img": "dark.png",
+          "iID": "dat-dark",
+          "exp": false
+        },
+        {
+          "id": 1,
+          "name": "hell",
+          "img": "light.png",
+          "iID": "dat-light",
+          "exp": false
+        },
         {
           "id": 2,
-          "name": "\"Nacht\"",
+          "name": "\"nacht\"",
           "img": "night.png",
-          "iID": "dat-night"
+          "iID": "dat-night",
+          "exp": false
         },
         {
           "id": 3,
           "name": "purple aesthetic",
           "img": "purpleaes.png",
-          "iID": "dat-p-pink"
+          "iID": "dat-p-pink",
+          "exp": false
         },
         {
           "id": 4,
           "name": "green aesthetic",
           "img": "greem.png",
-          "iID": "dat-p-green"
+          "iID": "dat-p-green",
+          "exp": false
         },
         {
           "id": 5,
-          "name": "Galaxy",
+          "name": "blue aesthetic",
+          "img": "bwue.png",
+          "iID": "dat-p-blue",
+          "exp": false
+        },
+        {
+          "id": 6,
+          "name": "otaku",
+          "img": "otaki.jpg",
+          "iID": "dat-otaku",
+          "exp": true
+        },
+        {
+          "id": 7,
+          "name": "galaxy",
           "img": "galaxy.jpg",
-          "iID": "dat-galaxy"
+          "iID": "dat-galaxy",
+          "exp": true
         }
       ]
     }
