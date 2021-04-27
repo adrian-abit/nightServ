@@ -1,0 +1,68 @@
+{
+  "_comment": "NEVER CHANGE THE ORDER IN THE ARRAYS. YOU CAN ***DUCK THINGS UP***",
+  "layouts": [
+    {
+      "id": 0,
+      "iID": "default",
+      "displayname": "Standartlayout (nightServ layout)",
+      "themes": [
+        {
+          "id": 0,
+          "name": "dunkel",
+          "img": "dark.png",
+          "iID": "dat-dark",
+          "exp": false
+        },
+        {
+          "id": 1,
+          "name": "hell",
+          "img": "light.png",
+          "iID": "dat-light",
+          "exp": false
+        },
+        {
+          "id": 2,
+          "name": "\"nacht\"",
+          "img": "night.png",
+          "iID": "dat-night",
+          "exp": false
+        },
+        {
+          "id": 3,
+          "name": "purple aesthetic",
+          "img": "purpleaes.png",
+          "iID": "dat-p-pink",
+          "exp": false
+        },
+        {
+          "id": 4,
+          "name": "green aesthetic",
+          "img": "greem.png",
+          "iID": "dat-p-green",
+          "exp": false
+        },
+        {
+          "id": 5,
+          "name": "blue aesthetic",
+          "img": "bwue.png",
+          "iID": "dat-p-blue",
+          "exp": false
+        },
+        {
+          "id": 6,
+          "name": "otaku",
+          "img": "otaki.jpg",
+          "iID": "dat-otaku",
+          "exp": true
+        },
+        {
+          "id": 7,
+          "name": "galaxy",
+          "img": "galaxy.jpg",
+          "iID": "dat-galaxy",
+          "exp": true
+        }
+      ]
+    }
+  ]
+}

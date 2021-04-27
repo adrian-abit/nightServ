@@ -47,7 +47,7 @@ chrome.storage.local.get([url, "nightServ_enabled"], res => {
         docReady(() => {
 
             //replace iserv logo
-            let uri = chrome.runtime.getURL("nightservfull.svg");
+            let uri = chrome.runtime.getURL("assets/nightservfull.svg");
             let el = document.getElementById("sidebar-nav-header");
             if (el != null) {
                 let img = el.firstChild.nextElementSibling.firstChild.nextElementSibling.firstChild.nextElementSibling;
@@ -72,18 +72,22 @@ chrome.storage.local.get([url, "nightServ_enabled"], res => {
                 button.setAttribute("class", "nav-item nav-module menu-item-nightserv");
 
                 let buttoncontent = document.createElement("a");
-                buttoncontent.setAttribute("href", "https://nightserv.abit.dev#feedback");
+                let iur = chrome.runtime.getURL("pages/settings/settings.html");
+                buttoncontent.setAttribute("href", iur);
 
                 let buttonimg = document.createElement("img");
                 buttonimg.setAttribute("class", "nav-svg-icon");
-                buttonimg.setAttribute("src", chrome.runtime.getURL("N.svg"));
+                buttonimg.setAttribute("src", chrome.runtime.getURL("assets/N.svg"));
                 buttoncontent.appendChild(buttonimg);
 
                 let buttonlabel = document.createElement("span");
                 buttonlabel.setAttribute("class", "item-label");
-                buttonlabel.appendChild(document.createTextNode("nightServ Feedback"))
+                buttonlabel.appendChild(document.createTextNode("nightServ Themes"))
                 buttoncontent.appendChild(buttonlabel);
-
+                let badge = document.createElement("a")
+                badge.textContent = "NEU!";
+                badge.id = "nsbadgenew";
+                buttoncontent.appendChild(badge);
                 button.appendChild(buttoncontent);
                 el.insertBefore(button, el.firstChild)
             }
