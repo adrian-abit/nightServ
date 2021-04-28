@@ -13,9 +13,10 @@
     "assets/N.svg",
     "pages/settings/settings.html",
     "pages/settings/settings.js",
-    "pages/settings/settings.css"
+    "pages/settings/settings.css",
+    "themes/layouts.json"
   ],
-  "permissions": ["storage", "tabs", "*://*/*"],
+  "permissions": ["storage", "tabs", "*://*/*", "https://i.imgur.com/*"],
   "browser_action": {
     "default_popup": "pages/popup/popup.html",
     "default_icon": "assets/nightservN128.png"

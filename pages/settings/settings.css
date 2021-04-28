@@ -123,6 +123,7 @@ div#badge {
   #content{
     margin-left: 20px;
     margin-top: 20px;
+    padding-bottom: 30px;
   }
 
   footer{
@@ -144,6 +145,25 @@ div#badge {
   #feedbackbtn:hover{
     border: 3px solid var(--text-link-blue);
   }
+
+  /**
+  scrollbar
+  **/
+
+  ::-webkit-scrollbar {
+    width: 7.5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--lighterdark);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #5f6368;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #bddeff;
+  }
+
 
   /**
   overlay

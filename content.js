@@ -28,7 +28,7 @@ function docReady(fn) {
 //check if the website is cached as an iserv site
 let url = extractDomain(location.href);
 
-chrome.storage.local.get([url, "nightServ_enabled"], res => {
+chrome.storage.local.get([url, "nightServ_enabled", "nightservdesign"], res => {
 
     if (res[url] == null)
         docReady(() => {
@@ -43,6 +43,21 @@ chrome.storage.local.get([url, "nightServ_enabled"], res => {
 
 
     if (res[url] && res["nightServ_enabled"]) {
+
+        readFile(chrome.runtime.getURL("themes/layouts.json"), (d) => {
+            console.log(d);
+            let data = JSON.parse(d);
+            if(data.layouts[res.nightservdesign.layout].themes[res.nightservdesign.theme].iTheme){
+                let img = document.createElement("img");
+                img.src = data.layouts[res.nightservdesign.layout].themes[res.nightservdesign.theme].iTimg;
+                img.id = "nightservthemeimage";
+                document.body.prepend(img);
+            }
+          });
+
+          
+
+
         //chage some things in the page
         docReady(() => {
 
@@ -101,3 +116,17 @@ function extractDomain(url) {
     return url.replace(/^(?:https?:\/\/)?(?:[^\/]+\.)?([^.\/]+\.[^.\/]+).*$/, "$1");
 }
 
+function readFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function () {
+      if (rawFile.readyState === 4) {
+        if (rawFile.status === 200 || rawFile.status == 0) {
+          var allText = rawFile.responseText;
+          callback(allText);
+        }
+      }
+    };
+    rawFile.send(null);
+  }
+  
