@@ -15,44 +15,44 @@ createO(() => {
 });
 
 function fade(element) {
-  var op = 1;  // initial opacity
+  var op = 1; // initial opacity
   var timer = setInterval(function () {
-      if (op <= 0.1){
-          clearInterval(timer);
-          element.style.display = 'none';
-      }
-      element.style.opacity = op;
-      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-      op -= op * 0.1;
+    if (op <= 0.1) {
+      clearInterval(timer);
+      element.style.display = "none";
+    }
+    element.style.opacity = op;
+    element.style.filter = "alpha(opacity=" + op * 100 + ")";
+    op -= op * 0.1;
   }, 30);
 }
 
 function unfade(element, callback) {
-  var op = 0.1;  // initial opacity
-  element.style.display = 'block';
+  var op = 0.1; // initial opacity
+  element.style.display = "block";
   var timer = setInterval(function () {
-      if (op >= 1){
-          clearInterval(timer);
-          callback();
-      }
-      element.style.opacity = op;
-      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-      op += op * 0.1;
+    if (op >= 1) {
+      clearInterval(timer);
+      callback();
+    }
+    element.style.opacity = op;
+    element.style.filter = "alpha(opacity=" + op * 100 + ")";
+    op += op * 0.1;
   }, 10);
 }
 
 function clickedTheme(event, theme) {
-  unfade(document.getElementById("overlay"), () => { 
+  unfade(document.getElementById("overlay"), () => {
     let iID = theme.id.replace("theme-", "");
-    chrome.storage.local.set({nightservdesign : idmap.get(iID)});
-    location.reload()
-  })
+    chrome.storage.local.set({ nightservdesign: idmap.get(iID) });
+    location.reload();
+  });
 }
 
-document.getElementById("feedbackbtn").addEventListener("click", e => {
+document.getElementById("feedbackbtn").addEventListener("click", (e) => {
   e.preventDefault();
-  location.href = "https://nightserv.abit.dev/#feedback"
-})
+  location.href = "https://nightserv.abit.dev/#feedback";
+});
 
 /** ugly shit but does what it's supposed to do */
 function createO(callback) {
@@ -82,7 +82,7 @@ function createO(callback) {
             actext.textContent = "Ausgewählt";
             tdiv.appendChild(actext);
           }
-          if(theme.exp){
+          if (theme.exp) {
             let exp = document.createElement("a");
             exp.textContent = "experimentell";
             exp.classList.add("expreimental");
@@ -94,9 +94,7 @@ function createO(callback) {
           tdiv.appendChild(name);
           idmap.set(theme.iID, { layout: layout.id, theme: theme.id });
           let themeimg = document.createElement("img");
-          themeimg.src = chrome.runtime.getURL(
-            "assets/themes/" + layout.iID + "/" + theme.img
-          );
+          themeimg.src = theme.img;
           themeimg.classList.add("themeimg");
           tdiv.appendChild(themeimg);
           themesd.appendChild(tdiv);
