@@ -1,7 +1,7 @@
 let enabled = true;
 
 document.getElementById("abit").addEventListener("click", () => {
-  window.open("https://nightserv.abit.dev/", "_blank");
+  window.open("https://nightserv.cc/", "_blank");
 });
 
 document.getElementById("changeNight").addEventListener("click", () => {

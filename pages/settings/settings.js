@@ -54,6 +54,17 @@ document.getElementById("feedbackbtn").addEventListener("click", (e) => {
   location.href = "https://nightserv.abit.dev/#feedback";
 });
 
+document.getElementById("reviewbtn").addEventListener("click", (e) => {
+  e.preventDefault();
+  location.href =
+    "https://chrome.google.com/webstore/detail/nightserv-das-addon-f%C3%BCr-i/bchohpbphomhnhnfhmfociifihbfjhpe?hl=en&authuser=0";
+});
+
+document.getElementById("coffeebtn").addEventListener("click", (e) => {
+  e.preventDefault();
+  location.href = "https://buymeacoff.ee/abitsys";
+});
+
 /** ugly shit but does what it's supposed to do */
 function createO(callback) {
   chrome.storage.local.get(["nightservdesign"], (r) => {

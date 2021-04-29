@@ -4,12 +4,12 @@
     {
       "id": 0,
       "iID": "default",
-      "displayname": "Standartlayout (nightServ layout)",
+      "displayname": "Standartthemes",
       "themes": [
         {
           "id": 0,
           "name": "dunkel",
-          "img": "https://files.abit.dev/nightserv/themes/dark.png",
+          "img": "https://content.nightserv.cc/nightserv/themes/dark.png",
           "iID": "dat-dark",
           "iTheme": false,
           "exp": false
@@ -17,7 +17,7 @@
         {
           "id": 1,
           "name": "hell",
-          "img": "https://files.abit.dev/nightserv/themes/light.png",
+          "img": "https://content.nightserv.cc/nightserv/themes/light.png",
           "iID": "dat-light",
           "iTheme": false,
           "exp": false
@@ -25,7 +25,7 @@
         {
           "id": 2,
           "name": "\"nacht\"",
-          "img": "https://files.abit.dev/nightserv/themes/night.png",
+          "img": "https://content.nightserv.cc/nightserv/themes/night.png",
           "iID": "dat-night",
           "iTheme": false,
           "exp": false
@@ -33,7 +33,7 @@
         {
           "id": 3,
           "name": "purple aesthetic",
-          "img": "https://files.abit.dev/nightserv/themes/purpleaes.png",
+          "img": "https://content.nightserv.cc/nightserv/themes/purpleaes.png",
           "iID": "dat-p-pink",
           "iTheme": false,
           "exp": false
@@ -41,7 +41,7 @@
         {
           "id": 4,
           "name": "green aesthetic",
-          "img": "https://files.abit.dev/nightserv/themes/greem.png",
+          "img": "https://content.nightserv.cc/nightserv/themes/greem.png",
           "iID": "dat-p-green",
           "iTheme": false,
           "exp": false
@@ -49,45 +49,52 @@
         {
           "id": 5,
           "name": "blue aesthetic",
-          "img": "https://files.abit.dev/nightserv/themes/bwue.png",
+          "img": "https://content.nightserv.cc/nightserv/themes/bwue.png",
           "iID": "dat-p-blue",
           "iTheme": false,
           "exp": false
-        },
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "iID": "picture",
+      "displayname": "Bilderthemes (experimentell)",
+      "themes": [
         {
-          "id": 6,
+          "id": 0,
           "name": "otaku",
-          "img": "https://files.abit.dev/nightserv/themes/otaku.jpg",
-          "iID": "dat-otaku",
+          "img": "https://content.nightserv.cc/nightserv/themes/otaku.jpg",
+          "iID": "pic-otaku",
           "iTheme": true,
-          "iTimg": "https://files.abit.dev/nightserv/themes/otaku.jpg",
+          "iTimg": "https://content.nightserv.cc/nightserv/themes/otaku.jpg",
           "exp": true
         },
         {
-          "id": 7,
-          "name": "galaxy",
-          "img": "https://files.abit.dev/nightserv/themes/galaxy.jpg",
-          "iID": "dat-galaxy",
-          "iTheme": true,
-          "iTimg": "https://files.abit.dev/nightserv/themes/galaxy.jpg",
-          "exp": true
-        },
-        {
-          "id": 8,
+          "id": 1,
           "name": "blend s",
-          "img": "https://files.abit.dev/nightserv/themes/blends.jpg",
-          "iID": "dat-blends",
+          "img": "https://content.nightserv.cc/nightserv/themes/blends.jpg",
+          "iID": "pic-blends",
           "iTheme": true,
-          "iTimg": "https://files.abit.dev/nightserv/themes/blends.jpg",
+          "iTimg": "https://content.nightserv.cc/nightserv/themes/blends.jpg",
           "exp": true
         },
         {
-          "id": 9,
+          "id": 2,
           "name": "itadori",
-          "img": "https://files.abit.dev/nightserv/themes/jjk.jpg",
-          "iID": "dat-jjk",
+          "img": "https://content.nightserv.cc/nightserv/themes/jjk.jpg",
+          "iID": "pic-jjk",
           "iTheme": true,
-          "iTimg": "https://files.abit.dev/nightserv/themes/jjk.jpg",
+          "iTimg": "https://content.nightserv.cc/nightserv/themes/jjk.jpg",
+          "exp": true
+        },
+        {
+          "id": 3,
+          "name": "galaxy",
+          "img": "https://content.nightserv.cc/nightserv/themes/galaxy.jpg",
+          "iID": "pic-galaxy",
+          "iTheme": true,
+          "iTimg": "https://content.nightserv.cc/nightserv/themes/galaxy.jpg",
           "exp": true
         }
       ]

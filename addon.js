@@ -11,6 +11,13 @@ chrome.runtime.onInstalled.addListener((reason) => {
     chrome.storage.local.get(["nightservdesign"], (r) => {
       if (isEmpty(r))
         chrome.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
+      else{
+        readFile(chrome.runtime.getURL("themes/layouts.json"), (d) => {
+          let data = JSON.parse(d);
+          if(data.layouts[r.nightservdesign.layout].themes[r.nightservdesign.theme] == null)
+          chrome.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
+        });
+        }
     });
   }
 });
