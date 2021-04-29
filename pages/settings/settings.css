@@ -132,7 +132,7 @@ div#badge {
     right: 0;
   }
 
-  #feedbackbtn{
+  button{
     background: transparent;
     color: #fff;
     font-size: 22px;
@@ -140,9 +140,10 @@ div#badge {
     padding: 7px;
     border-radius: 10px;
     cursor: pointer;
+    margin-right: 10px;
   }
 
-  #feedbackbtn:hover{
+  button:hover{
     border: 3px solid var(--text-link-blue);
   }
 
@@ -164,6 +165,10 @@ div#badge {
     background: #bddeff;
   }
 
+  a:visited{
+    color: #07f;
+  }
+
 
   /**
   overlay
@@ -182,13 +187,13 @@ div#badge {
     text-align: center;
   }
 
-  .lds-ellipsis {
+  #lds-ellipsis {
     display: inline-block;
     position: relative;
     width: 80px;
     height: 80px;
   }
-  .lds-ellipsis div {
+  #lds-ellipsis div {
     position: absolute;
     top: 33px;
     width: 13px;
@@ -197,19 +202,19 @@ div#badge {
     background: #fcf;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
   }
-  .lds-ellipsis div:nth-child(1) {
+  #lds-ellipsis div:nth-child(1) {
     left: 8px;
     animation: lds-ellipsis1 0.6s infinite;
   }
-  .lds-ellipsis div:nth-child(2) {
+  #lds-ellipsis div:nth-child(2) {
     left: 8px;
     animation: lds-ellipsis2 0.6s infinite;
   }
-  .lds-ellipsis div:nth-child(3) {
+  #lds-ellipsis div:nth-child(3) {
     left: 32px;
     animation: lds-ellipsis2 0.6s infinite;
   }
-  .lds-ellipsis div:nth-child(4) {
+  #lds-ellipsis div:nth-child(4) {
     left: 56px;
     animation: lds-ellipsis3 0.6s infinite;
   }
