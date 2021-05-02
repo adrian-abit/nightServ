@@ -1,0 +1,156 @@
+/*
+Global
+*/
+
+body,
+html,
+#wrapper {
+  background: var(--col1);
+  color: var(--text-color);
+}
+
+a:link,
+a:visited,
+a:link:hover {
+  color: var(--link-color);
+}
+
+.glyphicon {
+  color: var(--text-color) !important;
+}
+
+::-webkit-scrollbar {
+  width: 7.5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--col2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--col4);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--link-color);
+}
+
+
+/*
+Sidebar
+*/
+
+div#wrapper div#sidebar-wrapper {
+  background-color: var(--col1);
+}
+
+.sidebar-profile .dropdown a.dropdown-toggle {
+  color: var(--text-color);
+}
+
+.sidebar-nav .nav-item a span.item-label, #menu-wrapper .nav-divider.mt0, #menu-all-modules{
+    color: var(--text-color);
+}
+
+ul#sidebar-nav-header li.sidebar-brand, #menu-wrapper .nav-divider.mt0, #menu-all-modules{
+    border: none;
+}
+
+ul.sidebar-nav li.nav-item a:hover, .dropdown a:hover{
+    background-color: var(--col2) !important;
+}
+
+/*
+IServ Start
+*/
+
+/* This fixes scrolling the body, while scrolling the content.*/
+body{
+    overflow: hidden;
+}
+
+.page-content.inset{
+    overflow: scroll !important;
+    height: 100vh !important;
+    position: relative !important;
+}
+/**/
+
+.header-meta span, .divider{
+    color: var(--text-color)
+}
+
+.header-breadcrumb ol.breadcrumb{
+    background-color: transparent;
+}
+
+#page-content-wrapper div#topbar{
+    background-color: var(--col2);
+    border: none;
+}
+
+.content-header.clearfix{
+    background-color: var(--col2);
+    border: none;
+}
+
+.panel .panel-body, #mail-item-list {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.panel .panel-footer {
+  border-radius: 0px 0px 10px 10px;
+}
+
+#idesk-news .row.news {
+  background-color: var(--col3);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+#idesk-news > hr {
+  opacity: 0;
+  height: 10px;
+}
+
+.mb.text-secondary {
+  color: var(--text-gray);
+}
+
+div.page-content.inset div.row div.col-md-12 h1.mt0 {
+  display: none;
+}
+
+#idesk-main .panel,
+#idesk-sidebar .panel {
+  background-color: transparent;
+  border: none;
+}
+
+#idesk-main .panel #mail-item-list .mail-item {
+  border-bottom: none;
+}
+
+#idesk-main .panel #mail-item-list .mail-item:hover {
+  background-color: var(--col3);
+}
+
+.panel .panel-body,
+.panel #mail-item-list,
+.panel .panel-footer {
+  background-color: var(--col2);
+}
+
+#idesk-main .panel .panel-heading,
+#idesk-sidebar .panel-default .panel-heading {
+  background-color: transparent;
+  display: none;
+}
+
+.home-calendar .list-group-item {
+  background-color: transparent;
+}
+
+.panel-body table {
+  background-color: transparent;
+}
+
+

@@ -98,6 +98,21 @@
           "exp": true
         }
       ]
+    },
+    {
+      "id": 2,
+      "iID": "future",
+      "displayname": "nightServ V2",
+      "themes": [
+        {
+          "id": 0,
+          "name": "debug",
+          "img": "https://content.nightserv.cc/nightserv/themes/dark.png",
+          "iID": "fut-debug",
+          "iTheme": false,
+          "exp": true
+        }
+      ]
     }
   ]
 }
