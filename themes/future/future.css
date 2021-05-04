@@ -33,6 +33,19 @@ a:link:hover {
   background: var(--link-color);
 }
 
+#nightservthemeimage{
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+span.brand{
+  z-index: 1;
+}
 
 /*
 Sidebar
@@ -40,6 +53,7 @@ Sidebar
 
 div#wrapper div#sidebar-wrapper {
   background-color: var(--col1);
+  border: none;
 }
 
 .sidebar-profile .dropdown a.dropdown-toggle {
@@ -56,6 +70,47 @@ ul#sidebar-nav-header li.sidebar-brand, #menu-wrapper .nav-divider.mt0, #menu-al
 
 ul.sidebar-nav li.nav-item a:hover, .dropdown a:hover{
     background-color: var(--col2) !important;
+}
+
+ ol.breadcrumb > li > a.bc{
+  color: var(--text-color);
+}
+
+.panel {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.btn.btn-default{
+  background-color: var(--col2);
+  border: none;
+  border-radius: 5px;
+}
+
+.btn.btn-default:hover, .btn-default:focus, .dropdown-toggle.btn-default:active, .dropdown.open > .btn-default{
+  background-color: var(--col3) !important;
+}
+
+a:any-link.btn.btn-default:hover, a:visited:hover{
+  color: var(--link-color);
+}
+
+ul.dropdown-menu{
+  background-color: var(--col3) ;
+  border: none;
+  border-radius: 5px;
+}
+
+ul.dropdown-menu > li.active{
+  background-color: var(--hg1);
+}
+
+.btn.btn-default.dropdown-toggle{
+  color: var(--text-color) !important;
+}
+
+div.form-group > div.btn-group{
+  background-color: transparent;
 }
 
 /*
@@ -88,7 +143,7 @@ body{
 }
 
 .content-header.clearfix{
-    background-color: var(--col2);
+    background-color: transparent;
     border: none;
 }
 
@@ -101,7 +156,7 @@ body{
 }
 
 #idesk-news .row.news {
-  background-color: var(--col3);
+  background-color: transparent;
   padding: 10px;
   border-radius: 15px;
 }
@@ -149,8 +204,103 @@ div.page-content.inset div.row div.col-md-12 h1.mt0 {
   background-color: transparent;
 }
 
-.panel-body table {
+.panel .panel-body table, .panel-body table tbody {
   background-color: transparent;
 }
 
+/*
+Plans
+*/
 
+div.list-group a.list-group-item{
+  background-color: var(--col2);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+}
+
+div.list-group a.list-group-item:hover{
+  background-color: var(--col3);
+}
+div.list-group a.list-group-item div.media-body h4{
+  color: var(--text-color);
+}
+
+div.panel > div.panel-heading{
+  background-color: transparent;
+  border: none;
+}
+
+/*
+Excercises
+*/
+
+#crud-table{
+  background-color: transparent;
+  border: none;
+}
+
+#crud-table > tbody > tr{
+  background-color: transparent;
+}
+
+table > tbody > tr[role=row]:hover{
+  background-color: var(--col2) !important;
+}
+
+tr[role=row] > td{
+  padding: 10px !important;
+  color: var(--text-color);
+}
+
+#crud-table_info{
+  color: var(--text-gray);
+}
+
+/*
+Excercises
+*/
+
+.panel-heading h3{
+  display: none;
+}
+
+.panel table{
+  background-color: var(--col2);
+  border-radius: 10px;
+  margin-bottom: 5px !important;
+}
+
+.border-gray{
+  border: none !important;
+}
+
+tr > td, tr > th{
+  border: none !important;
+}
+
+#file-upload-container{
+  background-color: var(--col3);
+  border: none;
+  border-radius: 10px;
+}
+td > span.text-muted{
+  color: var(--text-gray);
+}
+div > div.file-universal-dropzone-hint{
+  color: var(--text-color);
+}
+
+select#confirmation_confirmed{
+  background-color: var(--col3);
+  border: none;
+  color: var(--text-color);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/*
+email
+*/

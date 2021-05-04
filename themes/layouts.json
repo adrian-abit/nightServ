@@ -109,7 +109,8 @@
           "name": "debug",
           "img": "https://content.nightserv.cc/nightserv/themes/dark.png",
           "iID": "fut-debug",
-          "iTheme": false,
+          "iTimg": "https://content.nightserv.cc/nightserv/themes/blends.jpg",
+          "iTheme": true,
           "exp": true
         }
       ]

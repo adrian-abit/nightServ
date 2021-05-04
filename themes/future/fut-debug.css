@@ -1,8 +1,8 @@
 :root{
-    --col1: #1e1e1e;
-    --col2: #252525;
-    --col3: #2d2d30;
-    --col4: #3e3e42;
+    --col1: rgba(30,30,30,0.2);
+    --col2: rgba(25,25,25,0.2);
+    --col3: rgba(45,45,48,0.2);
+    --col4: rgba(62,62,66,0.2);
     --hg1: #007acc;
     --text-color: #fff;
     --text-gray: #CCC;

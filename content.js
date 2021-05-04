@@ -65,7 +65,7 @@ chrome.storage.local.get(
       //chage some things in the page
       docReady(() => {
         //replace iserv logo
-        let uri = chrome.runtime.getURL("assets/nightservfull.svg");
+        let uri = chrome.runtime.getURL("assets/nightserv.png");
         let el = document.getElementById("sidebar-nav-header");
         if (el != null) {
           let img =
@@ -73,7 +73,8 @@ chrome.storage.local.get(
               .firstChild.nextElementSibling;
           img.src = uri;
           img.srcset = uri;
-          img.width = 150;
+          img.width = 145.76;
+          img.height = 61.96;
         }
 
         //change school text
@@ -97,7 +98,7 @@ chrome.storage.local.get(
 
           let buttonimg = document.createElement("img");
           buttonimg.setAttribute("class", "nav-svg-icon");
-          buttonimg.setAttribute("src", chrome.runtime.getURL("assets/N.svg"));
+          buttonimg.setAttribute("src", chrome.runtime.getURL("assets/ns24.png"));
           buttoncontent.appendChild(buttonimg);
 
           let buttonlabel = document.createElement("span");
@@ -116,8 +117,7 @@ chrome.storage.local.get(
   }
 );
 
-window.addEventListener("load", function () {
-});
+window.addEventListener("load", function () {});
 
 function extractDomain(url) {
   return url.replace(
