@@ -45,7 +45,6 @@ chrome.storage.local.get(
 
     if (res[url] && res["nightServ_enabled"]) {
       readFile(chrome.runtime.getURL("themes/layouts.json"), (d) => {
-        console.log(d);
         let data = JSON.parse(d);
         if (
           data.layouts[res.nightservdesign.layout].themes[
@@ -64,6 +63,7 @@ chrome.storage.local.get(
 
       //chage some things in the page
       docReady(() => {
+        console.log("danke, dass du nightServ verwendest!")
         //replace iserv logo
         let uri = chrome.runtime.getURL("assets/nightserv.png");
         let el = document.getElementById("sidebar-nav-header");
@@ -73,8 +73,9 @@ chrome.storage.local.get(
               .firstChild.nextElementSibling;
           img.src = uri;
           img.srcset = uri;
-          img.width = 145.76;
-          img.height = 61.96;
+          img.alt = "nightServ";
+          img.width = 120;
+          img.removeAttribute("height");
         }
 
         //change school text
@@ -116,8 +117,6 @@ chrome.storage.local.get(
     }
   }
 );
-
-window.addEventListener("load", function () {});
 
 function extractDomain(url) {
   return url.replace(

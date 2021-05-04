@@ -2,6 +2,10 @@
 Global
 */
 
+
+*{
+  color: var(--text-color);
+}
 body,
 html,
 #wrapper {
@@ -68,12 +72,13 @@ ul#sidebar-nav-header li.sidebar-brand, #menu-wrapper .nav-divider.mt0, #menu-al
     border: none;
 }
 
-ul.sidebar-nav li.nav-item a:hover, .dropdown a:hover{
+ul.sidebar-nav li.nav-item a:hover{
     background-color: var(--col2) !important;
 }
 
- ol.breadcrumb > li > a.bc{
+ ol.breadcrumb > li > a.bc,  ol.breadcrumb > li > a.bc:hover{
   color: var(--text-color);
+  background-color: transparent;
 }
 
 .panel {
@@ -82,8 +87,8 @@ ul.sidebar-nav li.nav-item a:hover, .dropdown a:hover{
 }
 
 .btn.btn-default{
-  background-color: var(--col2);
-  border: none;
+  background-color: var(--col2) !important;
+  border: none !important;
   border-radius: 5px;
 }
 
@@ -96,9 +101,14 @@ a:any-link.btn.btn-default:hover, a:visited:hover{
 }
 
 ul.dropdown-menu{
-  background-color: var(--col3) ;
+  background-color: var(--colP);
+  color: var(--text-color);
   border: none;
   border-radius: 5px;
+}
+
+ul > li > a{
+  color: var(--text-color) !important;
 }
 
 ul.dropdown-menu > li.active{
@@ -191,7 +201,7 @@ div.page-content.inset div.row div.col-md-12 h1.mt0 {
 .panel .panel-body,
 .panel #mail-item-list,
 .panel .panel-footer {
-  background-color: var(--col2);
+  background-color: var(--col2) !important;
 }
 
 #idesk-main .panel .panel-heading,
@@ -304,3 +314,159 @@ select#confirmation_confirmed{
 /*
 email
 */
+
+
+div.input-group .form-control{
+  background-color: var(--col2);
+  border: none;
+  color: var(--text-color);
+}
+#message-list-body > tr.message-row:hover, #message-list-body > tr.message-row:active, tr.message-row.active > td, tr.active > td{
+  background-color: var(--col2) !important;
+}
+#mailboxTree > li:hover{  
+  background-color: var(--col1);
+}
+#mailboxTree > li > a.mailbox:focus{
+  background-color: var(--col1);
+}
+
+#mailboxTree > li > a.mailbox:hover{
+  background-color: transparent;
+}
+
+#iserv_mail_search_options{
+  background-color: var(--colP);
+  color: var(--text-color);
+}
+
+li.dropdown-header{
+  color: var(--text-color)
+}
+
+.c1:before{
+  content: "U";
+  background: none !important;
+}
+
+.c2:before{
+  content: "w";
+  background: none !important;
+}
+
+.c3:before{
+  content: "U";
+  background: none !important;
+}
+
+.iserv-loading-indicator > .c1, .iserv-loading-indicator > .c2, .iserv-loading-indicator > .c3{
+  width: 8px !important;
+  height: 0px !important;
+}
+
+.iserv-loading-indicator{
+  display: inline-block !important;
+}
+
+.page-loader{
+  background-color: var(--colP) !important;
+  color: var(--text-color);
+}
+
+select#mail-entries, select#mail-page{
+  background-color: var(--col3);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#message-list-body tr#no-messages-in-list{
+  color: var(--text-color);
+}
+#message-list-body tr#no-messages-in-list:hover{
+  background-color: transparent;
+}
+
+option {
+  background-color: var(--col4) !important;
+}
+
+div.panel-body > div#message-header, div.panel > div#message-footer{
+  background-color: var(--col3) !important;
+  border: none !important;
+}
+
+div.selectize-input{
+  background-color: var(--col2);
+  border: none;
+  border-radius: 5px;
+}
+
+div.selectize-input > div{
+  background-color: var(--col3) !important;
+  border: none;
+  border-radius: 5px !important;
+  color: var(--text-color) !important;
+}
+
+input{
+  color: var(--text-color) !important;
+}
+
+div.selectize-dropdown-content{
+  background-color: var(--colP);
+  border: none;
+  color: var(--text-color);
+}
+
+.create{
+  color: var(--text-color) !important;
+}
+.text-muted{
+  color: var(--text-gray) !important;
+}
+div.selectize-dropdown{
+  border: none !important;
+}
+
+input{
+  background-color: var(--col2) !important;
+  border: none !important;
+  border-radius: 5px;
+  color: var(--text-color) !important;
+}
+
+div.mail-action-bar{
+  border-radius: 0px 0px 10px 10px;
+  background-color: var(--col1);
+  border: none;
+}
+
+textarea#iserv_mail_compose_content{
+  background-color: transparent;
+  color: var(--text-color);
+  border: none;
+  border-radius: 10px 10px 0px 0px;
+}
+
+div.editor{
+  border-radius: 10px 10px 0px 0px;
+  background-color: var(--col1);
+}
+
+div.jconfirm-box{
+  border:none;
+  background-color: var(--colP) !important;
+}
+
+div.jconfirm-buttons{
+  background-color: transparent;
+}
+
+button#iserv_mail_compose_actions_save{
+  color: var(--text-color);
+}
+
+div#messages-growl-container > div , div.alert{
+  background-color: var(--colP);
+}

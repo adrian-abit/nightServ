@@ -11,6 +11,7 @@
           "name": "dunkel",
           "img": "https://content.nightserv.cc/nightserv/themes/dark.png",
           "iID": "dat-dark",
+          "iTF": "dat-dark",
           "iTheme": false,
           "exp": false
         },
@@ -19,6 +20,7 @@
           "name": "hell",
           "img": "https://content.nightserv.cc/nightserv/themes/light.png",
           "iID": "dat-light",
+          "iTF": "dat-light",
           "iTheme": false,
           "exp": false
         },
@@ -27,6 +29,7 @@
           "name": "\"nacht\"",
           "img": "https://content.nightserv.cc/nightserv/themes/night.png",
           "iID": "dat-night",
+          "iTF": "dat-night",
           "iTheme": false,
           "exp": false
         },
@@ -35,6 +38,7 @@
           "name": "purple aesthetic",
           "img": "https://content.nightserv.cc/nightserv/themes/purpleaes.png",
           "iID": "dat-p-pink",
+          "iTF": "dat-p-pink",
           "iTheme": false,
           "exp": false
         },
@@ -43,6 +47,7 @@
           "name": "green aesthetic",
           "img": "https://content.nightserv.cc/nightserv/themes/greem.png",
           "iID": "dat-p-green",
+          "iTF": "dat-p-green",
           "iTheme": false,
           "exp": false
         },
@@ -51,6 +56,7 @@
           "name": "blue aesthetic",
           "img": "https://content.nightserv.cc/nightserv/themes/bwue.png",
           "iID": "dat-p-blue",
+          "iTF": "dat-p-blue",
           "iTheme": false,
           "exp": false
         }
@@ -66,6 +72,7 @@
           "name": "otaku",
           "img": "https://content.nightserv.cc/nightserv/themes/otaku.jpg",
           "iID": "pic-otaku",
+          "iTF": "pic-dark",
           "iTheme": true,
           "iTimg": "https://content.nightserv.cc/nightserv/themes/otaku.jpg",
           "exp": true
@@ -75,6 +82,7 @@
           "name": "blend s",
           "img": "https://content.nightserv.cc/nightserv/themes/blends.jpg",
           "iID": "pic-blends",
+          "iTF": "pic-dark",
           "iTheme": true,
           "iTimg": "https://content.nightserv.cc/nightserv/themes/blends.jpg",
           "exp": true
@@ -84,6 +92,7 @@
           "name": "itadori",
           "img": "https://content.nightserv.cc/nightserv/themes/jjk.jpg",
           "iID": "pic-jjk",
+          "iTF": "pic-dark",
           "iTheme": true,
           "iTimg": "https://content.nightserv.cc/nightserv/themes/jjk.jpg",
           "exp": true
@@ -93,24 +102,39 @@
           "name": "galaxy",
           "img": "https://content.nightserv.cc/nightserv/themes/galaxy.jpg",
           "iID": "pic-galaxy",
+          "iTF": "pic-dark",
           "iTheme": true,
           "iTimg": "https://content.nightserv.cc/nightserv/themes/galaxy.jpg",
           "exp": true
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "iID": "future",
-      "displayname": "nightServ V2",
-      "themes": [
+        },
         {
-          "id": 0,
-          "name": "debug",
-          "img": "https://content.nightserv.cc/nightserv/themes/dark.png",
-          "iID": "fut-debug",
-          "iTimg": "https://content.nightserv.cc/nightserv/themes/blends.jpg",
+          "id": 4,
+          "name": "nature",
+          "img": "https://content.nightserv.cc/nightserv/themes/nature.jpg",
+          "iID": "pic-nature",
+          "iTF": "pic-dark",
           "iTheme": true,
+          "iTimg": "https://content.nightserv.cc/nightserv/themes/nature.jpg",
+          "exp": true
+        },
+        {
+          "id": 5,
+          "name": "supercar",
+          "img": "https://content.nightserv.cc/nightserv/themes/vroomvroom.jpg",
+          "iID": "pic-supercar",
+          "iTF": "pic-dark",
+          "iTheme": true,
+          "iTimg": "https://content.nightserv.cc/nightserv/themes/vroomvroom.jpg",
+          "exp": true
+        },
+        {
+          "id": 6,
+          "name": "retro",
+          "img": "https://content.nightserv.cc/nightserv/themes/zoom.jpg",
+          "iID": "pic-retro",
+          "iTF": "pic-dark",
+          "iTheme": true,
+          "iTimg": "https://content.nightserv.cc/nightserv/themes/zoom.jpg",
           "exp": true
         }
       ]
