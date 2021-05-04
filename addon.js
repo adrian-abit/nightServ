@@ -46,7 +46,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
           style["runAt"] = "document_start";
           style["file"] = "themes/" + layout.iID + "/" + layout.iID + ".css";
           chrome.tabs.insertCSS(tabId, style);
-          style["file"] = "themes/" + layout.iID + "/" + theme.iID + ".css";
+          style["file"] = "themes/" + layout.iID + "/" + theme.iTF + ".css";
           chrome.tabs.insertCSS(tabId, style);
         });
       }

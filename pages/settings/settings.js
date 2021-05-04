@@ -72,6 +72,7 @@ function createO(callback) {
       jsondata = JSON.parse(d);
       currentlayout = r.nightservdesign.layout;
       currenttheme = r.nightservdesign.theme;
+      console.log( r.nightservdesign);
 
       jsondata.layouts.forEach((layout) => {
         let ediv = document.createElement("div");
@@ -92,6 +93,8 @@ function createO(callback) {
             actext.id = "selectedtext";
             actext.textContent = "Ausgewählt";
             tdiv.appendChild(actext);
+            console.log(layout)
+            console.log(theme)
           }
           if (theme.exp) {
             let exp = document.createElement("a");

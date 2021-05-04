@@ -1,0 +1,12 @@
+:root{
+    --col1: rgba(30,30,30,0.2);
+    --col2: rgba(25,25,25,0.2);
+    --col3: rgba(45,45,48,0.2);
+    --col4: rgba(62,62,66,0.2);
+    --colP: rgba(30,30,30,0.8);
+    --hg1: #007acc;
+    --text-color: #fff;
+    --text-gray: #CCC;
+    --link-color: #a9e5ff;
+    --panel-shadow: #000;
+}
