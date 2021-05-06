@@ -22,7 +22,7 @@
   },
   "background": {
     "scripts": ["addon.js"],
-    "persistent": false
+    "persistent": true
   },
   "content_scripts": [
     {

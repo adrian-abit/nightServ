@@ -9,6 +9,11 @@
   --border-gray: #5f6368;
 }
 
+*{
+  scrollbar-color: var(--bsa3) var(--scrollbar); 
+  scrollbar-width: thin;
+}
+
 html, body{
     background-color: var(--darker);
     font-family: Arial, Helvetica, sans-serif;

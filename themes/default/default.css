@@ -19,4 +19,7 @@ body{
     position: relative !important;
 }
 
- 
+*{
+    scrollbar-color: var(--bsa3) var(--scrollbar); 
+    scrollbar-width: thin;
+}

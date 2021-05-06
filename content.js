@@ -29,22 +29,23 @@ function docReady(fn) {
 //check if the website is cached as an iserv site
 let url = extractDomain(location.href);
 
-chrome.storage.local.get(
+browser.storage.local.get(
   [url, "nightServ_enabled", "nightservdesign"],
   (res) => {
+    console.log(res);
     if (res[url] == null)
       docReady(() => {
         let rss = {};
         let ic = isCSSthere();
         if (ic != null) {
           rss[url] = ic;
-          chrome.storage.local.set(rss);
+          browser.storage.local.set(rss);
           location.reload();
         }
       });
 
     if (res[url] && res["nightServ_enabled"]) {
-      readFile(chrome.runtime.getURL("themes/layouts.json"), (d) => {
+      readFile(browser.runtime.getURL("themes/layouts.json"), (d) => {
         let data = JSON.parse(d);
         if (
           data.layouts[res.nightservdesign.layout].themes[
@@ -65,7 +66,7 @@ chrome.storage.local.get(
       docReady(() => {
         console.log("danke, dass du nightServ verwendest!")
         //replace iserv logo
-        let uri = chrome.runtime.getURL("assets/nightserv.png");
+        let uri = browser.runtime.getURL("assets/nightserv.png");
         let el = document.getElementById("sidebar-nav-header");
         if (el != null) {
           let img =
@@ -82,7 +83,7 @@ chrome.storage.local.get(
         el = document.getElementsByClassName("brand");
         if (el.length > 0) {
           for (let i = 0; i < el.length; i++) {
-            let manifest = chrome.runtime.getManifest();
+            let manifest = browser.runtime.getManifest();
             el[i].textContent = manifest.name + " v" + manifest.version_name;
           }
         }
@@ -94,12 +95,12 @@ chrome.storage.local.get(
           button.setAttribute("class", "nav-item menu-item-nightserv");
 
           let buttoncontent = document.createElement("a");
-          let iur = chrome.runtime.getURL("pages/settings/settings.html");
+          let iur = browser.runtime.getURL("pages/settings/settings.html");
           buttoncontent.setAttribute("href", iur);
 
           let buttonimg = document.createElement("img");
           buttonimg.setAttribute("class", "nav-svg-icon");
-          buttonimg.setAttribute("src", chrome.runtime.getURL("assets/ns24.png"));
+          buttonimg.setAttribute("src", browser.runtime.getURL("assets/ns24.png"));
           buttoncontent.appendChild(buttonimg);
 
           let buttonlabel = document.createElement("span");
