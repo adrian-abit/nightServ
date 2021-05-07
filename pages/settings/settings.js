@@ -44,7 +44,7 @@ function unfade(element, callback) {
 function clickedTheme(event, theme) {
   unfade(document.getElementById("overlay"), () => {
     let iID = theme.id.replace("theme-", "");
-    chrome.storage.local.set({ nightservdesign: idmap.get(iID) });
+    browser.storage.local.set({ nightservdesign: idmap.get(iID) });
     location.reload();
   });
 }
@@ -67,8 +67,8 @@ document.getElementById("coffeebtn").addEventListener("click", (e) => {
 
 /** ugly shit but does what it's supposed to do */
 function createO(callback) {
-  chrome.storage.local.get(["nightservdesign"], (r) => {
-    readFile(chrome.runtime.getURL("themes/layouts.json"), (d) => {
+  browser.storage.local.get(["nightservdesign"], (r) => {
+    readFile(browser.runtime.getURL("themes/layouts.json"), (d) => {
       jsondata = JSON.parse(d);
       currentlayout = r.nightservdesign.layout;
       currenttheme = r.nightservdesign.theme;

@@ -20,4 +20,7 @@ body{
     padding-bottom: 150px;
 }
 
- 
+*{
+    scrollbar-color: var(--bsa3) var(--scrollbar); 
+    scrollbar-width: thin;
+}

@@ -5,6 +5,8 @@ Global
 
 *{
   color: var(--text-color);
+  scrollbar-color: var(--col2) var(--col4); 
+  scrollbar-width: thin;
 }
 body,
 html,

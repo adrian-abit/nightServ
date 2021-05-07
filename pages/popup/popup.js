@@ -6,14 +6,15 @@ document.getElementById("abit").addEventListener("click", () => {
 
 document.getElementById("changeNight").addEventListener("click", () => {
   enabled = !enabled;
-  chrome.storage.local.set({ nightServ_enabled: enabled });
+  browser.storage.local.set({ nightServ_enabled: enabled });
   changeText();
 });
 
 document.getElementById("settings").addEventListener("click", () => {
+  console.log("send to settings");
+  let uri = browser.runtime.getURL("pages/settings/settings.html");
+  browser.tabs.create({url : uri});
   window.close();
-  let uri = chrome.runtime.getURL("pages/settings/settings.html");
-  chrome.tabs.create({url : uri});
 });
 
 function changeText() {
@@ -29,10 +30,10 @@ function changeText() {
   }
 }
 
-chrome.storage.local.get(["nightServ_enabled", "verydark"], (res) => {
+browser.storage.local.get(["nightServ_enabled", "verydark"], (res) => {
   console.log(res);
   if (isEmpty(res) || res["nightServ_enabled"] == null)
-    chrome.storage.local.set({ nightServ_enabled: true });
+    browser.storage.local.set({ nightServ_enabled: true });
   else enabled = res["nightServ_enabled"];
 
   changeText();
