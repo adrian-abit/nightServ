@@ -17,6 +17,10 @@ body{
     overflow: scroll !important;
     height: 100vh !important;
     position: relative !important;
+    padding-bottom: 150px;
 }
 
- 
+*{
+    scrollbar-color: var(--bsa3) var(--scrollbar); 
+    scrollbar-width: thin;
+}

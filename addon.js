@@ -1,40 +1,40 @@
-chrome.runtime.onInstalled.addListener((reason) => {
+browser.runtime.onInstalled.addListener((reason) => {
   console.log("THANK YOU FOR CHOOSING NIGHTSERV MADE BY abit systems ^^");
   if (reason.reason == "install") {
-    chrome.storage.local.get(["nightServ_enabled"], (res) => {
-      if (isEmpty(res)) chrome.storage.local.set({ nightServ_enabled: true });
+    browser.storage.local.get(["nightServ_enabled"], (res) => {
+      if (isEmpty(res)) browser.storage.local.set({ nightServ_enabled: true });
     });
 
-    chrome.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
+    browser.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
   }
   if (reason.reason == "update") {
-    chrome.storage.local.get(["nightservdesign"], (r) => {
+    browser.storage.local.get(["nightservdesign"], (r) => {
       if (isEmpty(r))
-        chrome.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
+        browser.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
       else{
-        readFile(chrome.runtime.getURL("themes/layouts.json"), (d) => {
+        readFile(browser.runtime.getURL("themes/layouts.json"), (d) => {
           let data = JSON.parse(d);
           if(data.layouts[r.nightservdesign.layout].themes[r.nightservdesign.theme] == null)
-          chrome.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
+          browser.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
         });
         }
     });
   }
 });
 
-chrome.storage.local.set({ "iserv.de": false });
+browser.storage.local.set({ "iserv.de": false });
 
 //TODO: Change listener to inject right layout and theme
-chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+browser.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   if (!tab.url.startsWith("http")) return;
   let url = extractDomain(tab.url);
   if (changeInfo.status != "loading") return;
-  chrome.storage.local.get(
+  browser.storage.local.get(
     [url, "nightServ_enabled", "nightservdesign"],
     (r) => {
       if (r[url] == null) return;
       if (r[url] && r["nightServ_enabled"]) {
-        readFile(chrome.runtime.getURL("themes/layouts.json"), (d) => {
+        readFile(browser.runtime.getURL("themes/layouts.json"), (d) => {
           let data = JSON.parse(d);
           let style = {};
           console.log(r.nightservdesign);
@@ -45,9 +45,9 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
             ];
           style["runAt"] = "document_start";
           style["file"] = "themes/" + layout.iID + "/" + layout.iID + ".css";
-          chrome.tabs.insertCSS(tabId, style);
+          browser.tabs.insertCSS(tabId, style);
           style["file"] = "themes/" + layout.iID + "/" + theme.iTF + ".css";
-          chrome.tabs.insertCSS(tabId, style);
+          browser.tabs.insertCSS(tabId, style);
         });
       }
     }
