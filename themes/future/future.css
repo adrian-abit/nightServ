@@ -133,9 +133,10 @@ body{
 }
 
 .page-content.inset{
-    overflow: scroll !important;
-    height: 100vh !important;
-    position: relative !important;
+  overflow: scroll !important;
+  height: 100vh !important;
+  position: relative !important;
+  padding-bottom: 150px; 
 }
 /**/
 

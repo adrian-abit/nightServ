@@ -138,6 +138,23 @@
           "exp": true
         }
       ]
+    },
+    {
+      "id": 2,
+      "iID": "future",
+      "displayname": "Debug",
+      "themes": [
+        {
+          "id": 0,
+          "name": "debug",
+          "img": "https://content.nightserv.cc/nightserv/themes/dark.png",
+          "iID": "fut-debug",
+          "iTF": "fut-debug",
+          "iTheme": true,
+          "iTimg": "https://content.nightserv.cc/nightserv/themes/zoom.jpg",
+          "exp": true
+        }
+      ]
     }
   ]
 }
