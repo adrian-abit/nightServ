@@ -1,4 +1,4 @@
 # nightServ
 Ein Darkmode für Iserv
 
-find nightServ for in dev-firefox
+find nightServ for firefox in latest-firefox or dev-firefox
