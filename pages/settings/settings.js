@@ -57,7 +57,7 @@ document.getElementById("feedbackbtn").addEventListener("click", (e) => {
 document.getElementById("reviewbtn").addEventListener("click", (e) => {
   e.preventDefault();
   location.href =
-    "https://chrome.google.com/webstore/detail/nightserv-das-addon-f%C3%BCr-i/bchohpbphomhnhnfhmfociifihbfjhpe?hl=en&authuser=0";
+    "https://get.nightserv.cc";
 });
 
 document.getElementById("coffeebtn").addEventListener("click", (e) => {
