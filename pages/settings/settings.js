@@ -1,18 +1,75 @@
-let currentlayout;
-let currenttheme;
+/* NightServ - Released under the GPL-3.0 license | Copyright 2020 - 2022 Adrian Bit - abit.dev */
 
-let jsondata;
-
-let idmap = new Map();
-
-createO(() => {
-  let themes = document.getElementsByClassName("theme");
-  for (let theme of themes) {
-    if (theme.classList.contains("selected")) continue;
-    theme.addEventListener("click", (event) => clickedTheme(event, theme));
-  }
-  fade(document.getElementById("overlay"));
+reloadThemesAndOptions().then(() => {
+  populate().then(() => {
+    let themes = document.getElementsByClassName("theme");
+    for (let theme of themes) {
+      if (theme.classList.contains("selected")) continue;
+      theme.addEventListener("click", (event) => clickedTheme(event, theme));
+    }
+    fade(document.getElementById("overlay"));
+  });
 });
+
+async function reloadThemesAndOptions() {
+  return new Promise((resolve, reject) => {
+    chrome.storage.local.get("active", (res) => {
+      fetch("https://content.nightserv.cc/nightserv/2/themes.json")
+        .then((data) => data.json())
+        .then(json => {
+          chrome.storage.local.set({ "json": json });
+          if (json[res.active] == null) res.active = "dark";
+          fetch("https://content.nightserv.cc/nightserv/2/" + json[res.active].category + "/template.css")
+            .then(res => res.text())
+            .then((template) => {
+              fetch("https://content.nightserv.cc/nightserv/2/" + json[res.active].category + "/" + res.active + "/theme.css")
+                .then(res => res.text())
+                .then((data) => { chrome.storage.local.set({ "theme": template + data }); resolve() });
+            });
+        });
+    });
+  });
+}
+
+async function populate() {
+  return new Promise((resolve, reject) => {
+    chrome.storage.local.get(["json", "active"], (data) => {
+      let json = data.json;
+      let active = data.active;
+
+      let container = document.getElementById("themes");
+      Object.entries(json).forEach(([tname, value]) => {
+        if (tname == "picture") return;
+        let div = document.createElement("div");
+        div.classList.add("theme");
+        div.id = tname
+
+        let name = document.createElement("h2");
+        name.classList.add("themename");
+        name.textContent = value.display;
+        div.appendChild(name);
+
+        themeimg = document.createElement("img");
+        themeimg.src = "https://content.nightserv.cc/nightserv/2/" + value.category + "/" + tname + "/img.png";
+        themeimg.classList.add("themeimg");
+        div.appendChild(themeimg);
+
+        if (tname == active) {
+          div.classList.add("selected");
+          let actext = document.createElement("h2");
+          actext.id = "selectedtext";
+          actext.textContent = chrome.i18n.getMessage("selectedtheme");
+          div.appendChild(actext);
+        }
+        container.appendChild(div);
+
+        /* TODO: Populate and deal with own image */
+
+        resolve();
+      });
+    });
+  });
+}
 
 function fade(element) {
   var op = 1; // initial opacity
@@ -43,95 +100,7 @@ function unfade(element, callback) {
 
 function clickedTheme(event, theme) {
   unfade(document.getElementById("overlay"), () => {
-    let iID = theme.id.replace("theme-", "");
-    chrome.storage.local.set({ nightservdesign: idmap.get(iID) });
-    location.reload();
+    chrome.storage.local.set({ active: theme.id });
+    reloadThemesAndOptions().then(location.reload());
   });
-}
-
-document.getElementById("feedbackbtn").addEventListener("click", (e) => {
-  e.preventDefault();
-  location.href = "https://nightserv.abit.dev/#feedback";
-});
-
-document.getElementById("reviewbtn").addEventListener("click", (e) => {
-  e.preventDefault();
-  location.href =
-    "https://chrome.google.com/webstore/detail/nightserv-das-addon-f%C3%BCr-i/bchohpbphomhnhnfhmfociifihbfjhpe?hl=en&authuser=0";
-});
-
-document.getElementById("coffeebtn").addEventListener("click", (e) => {
-  e.preventDefault();
-  location.href = "https://buymeacoff.ee/abitsys";
-});
-
-/** ugly shit but does what it's supposed to do */
-function createO(callback) {
-  chrome.storage.local.get(["nightservdesign"], (r) => {
-    readFile(chrome.runtime.getURL("themes/layouts.json"), (d) => {
-      jsondata = JSON.parse(d);
-      currentlayout = r.nightservdesign.layout;
-      currenttheme = r.nightservdesign.theme;
-      console.log( r.nightservdesign);
-
-      jsondata.layouts.forEach((layout) => {
-        let ediv = document.createElement("div");
-        ediv.id = "layout-" + layout.iID;
-        let lh = document.createElement("h1");
-        lh.textContent = layout.displayname;
-        ediv.appendChild(lh);
-        let themesd = document.createElement("div");
-        themesd.classList.add("themes");
-
-        layout.themes.forEach((theme) => {
-          let tdiv = document.createElement("div");
-          tdiv.id = "theme-" + theme.iID;
-          tdiv.classList.add("theme");
-          if (layout.id == currentlayout && theme.id == currenttheme) {
-            tdiv.classList.add("selected");
-            let actext = document.createElement("h2");
-            actext.id = "selectedtext";
-            actext.textContent = "Ausgewählt";
-            tdiv.appendChild(actext);
-            console.log(layout)
-            console.log(theme)
-          }
-          if (theme.exp) {
-            let exp = document.createElement("a");
-            exp.textContent = "experimentell";
-            exp.classList.add("expreimental");
-            tdiv.appendChild(exp);
-          }
-          let name = document.createElement("h2");
-          name.classList.add("themename");
-          name.textContent = theme.name;
-          tdiv.appendChild(name);
-          idmap.set(theme.iID, { layout: layout.id, theme: theme.id });
-          let themeimg = document.createElement("img");
-          themeimg.src = theme.img;
-          themeimg.classList.add("themeimg");
-          tdiv.appendChild(themeimg);
-          themesd.appendChild(tdiv);
-        });
-        ediv.appendChild(themesd);
-        document.getElementById("layouts").appendChild(ediv);
-        callback();
-      });
-    });
-  });
-}
-
-//stolen https://stackoverflow.com/a/14446538/10548599 changed tho
-function readFile(file, callback) {
-  var rawFile = new XMLHttpRequest();
-  rawFile.open("GET", file, true);
-  rawFile.onreadystatechange = function () {
-    if (rawFile.readyState === 4) {
-      if (rawFile.status === 200 || rawFile.status == 0) {
-        var allText = rawFile.responseText;
-        callback(allText);
-      }
-    }
-  };
-  rawFile.send(null);
 }

@@ -2,8 +2,8 @@
   "name": "__MSG_name__",
   "description": "__MSG_desc__",
   "version": "200",
-  "author": "Adrian @ abit systems",
-  "version_name": "0.0.2",
+  "author": "Adrian Bit",
+  "version_name": "2",
   "manifest_version": 3,
   "default_locale": "de",
   "web_accessible_resources": [
@@ -23,7 +23,8 @@
   "permissions": [
     "storage",
     "tabs",
-    "scripting"
+    "scripting",
+    "unlimitedStorage"
   ],
   "host_permissions": [
     "*://*/*"
