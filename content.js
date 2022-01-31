@@ -6,6 +6,7 @@ function isCSSthere() {
     if (document.styleSheets[i].href !== null) {
       if (document.styleSheets[i].href.includes("/css/iserv.")) {
         is = true;
+        console.log("Du befindest dich zur Zeit auf einem IServ Schulserver!");
         break;
       }
     }
@@ -106,10 +107,6 @@ chrome.storage.local.get(
           buttonlabel.setAttribute("class", "item-label");
           buttonlabel.appendChild(document.createTextNode("nightServ Themes"));
           buttoncontent.appendChild(buttonlabel);
-          let badge = document.createElement("span");
-          badge.textContent = "NEU!";
-          badge.id = "nsbadgenew";
-          buttoncontent.appendChild(badge);
           button.appendChild(buttoncontent);
           el.insertBefore(button, el.firstChild);
         }

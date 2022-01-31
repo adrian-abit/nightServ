@@ -12,8 +12,8 @@ chrome.runtime.onInstalled.addListener((reason) => {
       if (isEmpty(r))
         chrome.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
       else{
-        readFile(chrome.runtime.getURL("themes/layouts.json"), (d) => {
-          let data = JSON.parse(d);
+        readFile("themes/layouts.json", (data) => {
+          console.log(data);
           if(data.layouts[r.nightservdesign.layout].themes[r.nightservdesign.theme] == null)
           chrome.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
         });
@@ -34,20 +34,19 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     (r) => {
       if (r[url] == null) return;
       if (r[url] && r["nightServ_enabled"]) {
-        readFile(chrome.runtime.getURL("themes/layouts.json"), (d) => {
-          let data = JSON.parse(d);
+        readFile("themes/layouts.json", (data) => {
           let style = {};
-          console.log(r.nightservdesign);
           let layout = data.layouts[r.nightservdesign.layout];
           let theme =
             data.layouts[r.nightservdesign.layout].themes[
               r.nightservdesign.theme
             ];
-          style["runAt"] = "document_start";
-          style["file"] = "themes/" + layout.iID + "/" + layout.iID + ".css";
-          chrome.tabs.insertCSS(tabId, style);
-          style["file"] = "themes/" + layout.iID + "/" + theme.iTF + ".css";
-          chrome.tabs.insertCSS(tabId, style);
+          style["target"] = {"tabId" : tabId};
+          //style["runAt"] = "document_start";
+          let files = ["themes/" + layout.iID + "/" + layout.iID + ".css", "themes/" + layout.iID + "/" + theme.iTF + ".css"]
+          style["files"] = files;
+          console.log(style);
+          chrome.scripting.insertCSS(style);
         });
       }
     }
@@ -66,17 +65,10 @@ function isEmpty(r) {
   return JSON.stringify(r) === JSON.stringify({});
 }
 
-//stolen https://stackoverflow.com/a/14446538/10548599 changed tho
 function readFile(file, callback) {
-  var rawFile = new XMLHttpRequest();
-  rawFile.open("GET", file, true);
-  rawFile.onreadystatechange = function () {
-    if (rawFile.readyState === 4) {
-      if (rawFile.status === 200 || rawFile.status == 0) {
-        var allText = rawFile.responseText;
-        callback(allText);
-      }
-    }
-  };
-  rawFile.send(null);
+  let url = chrome.runtime.getURL(file);
+
+  fetch(url)
+      .then((response) => response.json())
+      .then(data => callback(data));
 }

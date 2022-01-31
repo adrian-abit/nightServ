@@ -3,7 +3,7 @@
   "description": "__MSG_desc__",
   "version": "200",
   "author": "Adrian @ abit systems",
-  "version_name": "2",
+  "version_name": "0.0.2",
   "manifest_version": 3,
   "default_locale": "de",
   "web_accessible_resources": [
@@ -22,7 +22,8 @@
   ],
   "permissions": [
     "storage",
-    "tabs"
+    "tabs",
+    "scripting"
   ],
   "host_permissions": [
     "*://*/*"
