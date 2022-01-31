@@ -112,20 +112,22 @@ chrome.storage.local.get(
           el.insertBefore(button, el.firstChild);
 
           // insert tip
-          let tip = document.createElement("div");
-          tip.classList.add("panel", "panel-dashboard", "panel-default");
-          let tipheader = document.createElement("div");
-          tipheader.classList.add("panel-heading");
-          let title = document.createElement("h2");
-          title.classList.add("panel-title");
-          title.innerText = "nightServ";
-          tipheader.appendChild(title);
-          tip.appendChild(tipheader);
-          let tipbody = document.createElement("div");
-          tipbody.classList.add("panel-body");
-          tipbody.innerHTML = chrome.i18n.getMessage("tip");
-          tip.appendChild(tipbody);
-          document.getElementById("idesk-sidebar").prepend(tip);
+          if (Math.random() > 0.85) {
+            let tip = document.createElement("div");
+            tip.classList.add("panel", "panel-dashboard", "panel-default");
+            let tipheader = document.createElement("div");
+            tipheader.classList.add("panel-heading");
+            let title = document.createElement("h2");
+            title.classList.add("panel-title");
+            title.innerText = "nightServ";
+            tipheader.appendChild(title);
+            tip.appendChild(tipheader);
+            let tipbody = document.createElement("div");
+            tipbody.classList.add("panel-body");
+            tipbody.innerHTML = chrome.i18n.getMessage("tip");
+            tip.appendChild(tipbody);
+            document.getElementById("idesk-sidebar").prepend(tip);
+          }
         }
       });
     }

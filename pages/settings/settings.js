@@ -7,6 +7,16 @@ reloadThemesAndOptions().then(() => {
       if (theme.classList.contains("selected")) continue;
       theme.addEventListener("click", (event) => clickedTheme(event, theme));
     }
+    document.getElementById("imgselect").addEventListener("click", () => {
+      let input = document.getElementById("imgurl");
+      if(input.value == "" || !(input.value.endsWith(".png") || input.value.endsWith(".jpeg") || input.value.endsWith(".jpg") || input.value.endsWith(".gif"))){
+        alert("Bitte gebe eine richtige URL an.\nStelle sicher, dass die URL mit .png, .jpg, .jpeg oder .gif endet.\n");
+        return;
+      } else {
+        chrome.storage.local.set({"active": "picture", "img" : input.value});
+        reloadThemesAndOptions().then(location.reload());
+      }
+    });
     fade(document.getElementById("overlay"));
   });
 });
@@ -62,11 +72,24 @@ async function populate() {
           div.appendChild(actext);
         }
         container.appendChild(div);
-
-        /* TODO: Populate and deal with own image */
-
-        resolve();
       });
+
+      chrome.storage.local.get(["img", "active"], (data) => {
+        if(data.img != null){
+          let input = document.getElementById("imgurl");
+          let button = document.getElementById("imgselect");
+
+          document.getElementById("imgprev").src = data.img;
+          input.value = data.img;
+          if(data.active == "picture") {
+            button.innerText = "Bild Ändern";
+            document.getElementById("ownimage").classList.add("selected");
+          }
+        }
+      }); 
+
+
+      resolve();
     });
   });
 }
