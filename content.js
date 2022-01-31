@@ -98,6 +98,7 @@ chrome.storage.local.get(
           let buttoncontent = document.createElement("a");
           let iur = chrome.runtime.getURL("pages/settings/settings.html");
           buttoncontent.setAttribute("href", iur);
+          buttoncontent.setAttribute("target", "_blank");
 
           let buttonimg = document.createElement("img");
           buttonimg.setAttribute("class", "nav-svg-icon");
