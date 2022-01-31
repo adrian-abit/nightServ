@@ -40,16 +40,12 @@ div#badge {
     padding: 4px 6px;
   }
 
-  .themes{
-    display: flex;
-    flex-wrap: wrap;
-  }
 
   .theme{
     position: relative;
     width: 300px;
     border: 4px solid var(--border-gray);
-    border-radius: 20px;
+    border-radius: 5px;
     margin-right: 20px;
     margin-bottom: 20px;
     cursor: pointer;
@@ -82,20 +78,7 @@ div#badge {
     border-radius: 10px;
   }
 
-  .theme a.expreimental{
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background-color: #ff6961;
-    padding: 5px;
-    padding-right: 7px;
-    padding-left: 7px;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 14px;
-  }
-
-  .theme.selected{
+  .selected{
     border: 4px solid #77dd77;
     cursor: no-drop;
   }
@@ -105,7 +88,20 @@ div#badge {
   .theme .themeimg{
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 0px;
+  }
+
+  section#layouts{
+    width: 100%;
+  }
+
+
+  div#themes{
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    padding: calc(0.3vw + 0.6vh);
+    width: 100%;
   }
 
   body{
@@ -132,7 +128,8 @@ div#badge {
     right: 0;
   }
 
-  button{
+
+  button, input, #feedback{
     background: transparent;
     color: #fff;
     font-size: 22px;
@@ -141,9 +138,12 @@ div#badge {
     border-radius: 10px;
     cursor: pointer;
     margin-right: 10px;
+    text-decoration: none;
   }
 
-  button:hover{
+  input {cursor: text}
+
+  button:hover, input:hover, #feedback:hover{
     border: 3px solid var(--text-link-blue);
   }
 
@@ -169,6 +169,41 @@ div#badge {
     color: #07f;
   }
 
+  h1 {
+    display: inline-block;
+    font-size: calc(0.7vw + 1.2vh);
+    border-bottom: 2px solid #fff;
+
+
+  }
+
+  /**
+    Eigenes Bild
+  **/
+
+  #imgprev {
+     max-width: 30vw;
+     background-color: #fff;
+     border: 4px solid #ccc;
+     border-radius: 10px;
+  }
+
+  section#ownimage div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  section#ownimage div *{
+    margin-right: 1vw;
+  }
+
+  #ownimage.selected{
+    cursor: inherit;
+    padding: 1%;
+  }
+
+
 
   /**
   overlay
@@ -184,62 +219,40 @@ div#badge {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
   }
 
-  #lds-ellipsis {
+  .lds-ripple {
     display: inline-block;
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 160px;
+    height: 160px;
   }
-  #lds-ellipsis div {
+  .lds-ripple div {
     position: absolute;
-    top: 33px;
-    width: 13px;
-    height: 13px;
+    border: 8px solid #fcf;
+    opacity: 1;
     border-radius: 50%;
-    background: #fcf;
-    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
   }
-  #lds-ellipsis div:nth-child(1) {
-    left: 8px;
-    animation: lds-ellipsis1 0.6s infinite;
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
   }
-  #lds-ellipsis div:nth-child(2) {
-    left: 8px;
-    animation: lds-ellipsis2 0.6s infinite;
-  }
-  #lds-ellipsis div:nth-child(3) {
-    left: 32px;
-    animation: lds-ellipsis2 0.6s infinite;
-  }
-  #lds-ellipsis div:nth-child(4) {
-    left: 56px;
-    animation: lds-ellipsis3 0.6s infinite;
-  }
-  @keyframes lds-ellipsis1 {
+  @keyframes lds-ripple {
     0% {
-      transform: scale(0);
+      top: 72px;
+      left: 72px;
+      width: 0;
+      height: 0;
+      opacity: 1;
     }
     100% {
-      transform: scale(1);
-    }
-  }
-  @keyframes lds-ellipsis3 {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
-  @keyframes lds-ellipsis2 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(24px, 0);
+      top: 0px;
+      left: 0px;
+      width: 144px;
+      height: 144px;
+      opacity: 0;
     }
   }
   

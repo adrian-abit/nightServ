@@ -1,0 +1,29 @@
+{
+  "name": {
+    "message": "nightServ - The browser extension for IServ®"
+  },
+  "desc": {
+    "message": "Themes for IServ®"
+  },
+  "availablethemes" : {
+    "message": "Available Themes"
+  },
+  "selectedtheme": {
+    "message": "Applied"
+  },
+  "tip" : {
+    "message": "Hey! Thanks for using nightServ! It means a lot to me, seeing so many people using this extension.<br><br>Are you happy with nightServ? If yes, I would really appreciate a review on the extension marketplace.<br>Or recomment you to your friends who could also benefit from this extension! <br><br> Are you having issues, feedback or just wanna say something, you can always tell me here: <a href='https://forms.gle/ujXPBPCMFgsk9uDp6'>Feedback</a>"
+  },
+  "ownimage" : {
+    "message": "Use Image as Background"
+  },
+  "changeimage": {
+    "message" : "Change Image"
+  }, 
+  "apply": {
+    "message" : "Apply"
+  },
+  "urlerr": {
+    "message": "Please provide a valid URL.\nMake sure that the URL ends with .jpg, .png. jpeg or .gif"
+  }
+}

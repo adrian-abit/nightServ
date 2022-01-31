@@ -1,0 +1,14 @@
+{
+  "name": {
+    "message": "nightServ - De extension voor IServ®"
+  },
+  "desc": {
+    "message": "Themes voor IServ®"
+  },
+  "availablethemes" : {
+    "message": "Beschikbare Themes"
+  },
+  "selectedtheme": {
+    "message": "Selected"
+  }
+}

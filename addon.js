@@ -1,26 +1,35 @@
+/* NightServ - Released under the GPL-3.0 license | Copyright 2020 - 2022 Adrian Bit - abit.dev */
+
 chrome.runtime.onInstalled.addListener((reason) => {
   console.log("THANK YOU FOR CHOOSING NIGHTSERV MADE BY abit systems ^^");
-  if (reason.reason == "install") {
-    chrome.storage.local.get(["nightServ_enabled"], (res) => {
-      if (isEmpty(res)) chrome.storage.local.set({ nightServ_enabled: true });
-    });
-
-    chrome.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
-  }
-  if (reason.reason == "update") {
-    chrome.storage.local.get(["nightservdesign"], (r) => {
-      if (isEmpty(r))
-        chrome.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
-      else{
-        readFile(chrome.runtime.getURL("themes/layouts.json"), (d) => {
-          let data = JSON.parse(d);
-          if(data.layouts[r.nightservdesign.layout].themes[r.nightservdesign.theme] == null)
-          chrome.storage.local.set({ nightservdesign: { layout: 0, theme: 0 } });
-        });
-        }
-    });
-  }
+  chrome.storage.local.get(["nightServ_enabled"], (res) => {
+    if (isEmpty(res)) chrome.storage.local.set({ nightServ_enabled: true });
+  });
+  console.time("Refresh Data");
+  reloadThemesAndOptions().then((res) => {console.timeEnd("Refresh Data")
+  console.log(res);
 });
+});
+
+async function reloadThemesAndOptions() {
+  return new Promise((resolve, reject) => {
+    chrome.storage.local.get("active", (res) => {
+      fetch("https://content.nightserv.cc/nightserv/2/themes.json")
+        .then((data) => data.json())
+        .then(json => {
+          chrome.storage.local.set({ "json": json });
+          if(json[res.active] == null) res.active = "dark";
+          fetch("https://content.nightserv.cc/nightserv/2/" + json[res.active].category + "/template.css")
+            .then(res => res.text())
+            .then((template) => {
+              fetch("https://content.nightserv.cc/nightserv/2/" + json[res.active].category + "/" + res.active + "/theme.css")
+                .then(res => res.text())
+                .then((data) => { chrome.storage.local.set({ "theme": template + data }); });
+            });
+        });
+    });
+  });
+}
 
 chrome.storage.local.set({ "iserv.de": false });
 
@@ -29,26 +38,21 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   if (!tab.url.startsWith("http")) return;
   let url = extractDomain(tab.url);
   if (changeInfo.status != "loading") return;
+  console.time("inject");
   chrome.storage.local.get(
-    [url, "nightServ_enabled", "nightservdesign"],
+    [url, "nightServ_enabled"],
     (r) => {
       if (r[url] == null) return;
       if (r[url] && r["nightServ_enabled"]) {
-        readFile(chrome.runtime.getURL("themes/layouts.json"), (d) => {
-          let data = JSON.parse(d);
-          let style = {};
-          console.log(r.nightservdesign);
-          let layout = data.layouts[r.nightservdesign.layout];
-          let theme =
-            data.layouts[r.nightservdesign.layout].themes[
-              r.nightservdesign.theme
-            ];
-          style["runAt"] = "document_start";
-          style["file"] = "themes/" + layout.iID + "/" + layout.iID + ".css";
-          chrome.tabs.insertCSS(tabId, style);
-          style["file"] = "themes/" + layout.iID + "/" + theme.iTF + ".css";
-          chrome.tabs.insertCSS(tabId, style);
-        });
+        chrome.storage.local.get(["theme"], (data) => {
+          let style = {
+            target: { "tabId": tabId },
+            css: data.theme
+          }
+          console.log(data);
+          chrome.scripting.insertCSS(style);
+          console.timeEnd("inject");
+        })
       }
     }
   );
@@ -66,17 +70,10 @@ function isEmpty(r) {
   return JSON.stringify(r) === JSON.stringify({});
 }
 
-//stolen https://stackoverflow.com/a/14446538/10548599 changed tho
 function readFile(file, callback) {
-  var rawFile = new XMLHttpRequest();
-  rawFile.open("GET", file, true);
-  rawFile.onreadystatechange = function () {
-    if (rawFile.readyState === 4) {
-      if (rawFile.status === 200 || rawFile.status == 0) {
-        var allText = rawFile.responseText;
-        callback(allText);
-      }
-    }
-  };
-  rawFile.send(null);
+  let url = chrome.runtime.getURL(file);
+
+  fetch(url)
+    .then((response) => response.json())
+    .then(data => callback(data));
 }

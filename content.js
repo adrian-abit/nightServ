@@ -1,3 +1,4 @@
+/* NightServ - Released under the GPL-3.0 license | Copyright 2020 - 2022 Adrian Bit - abit.dev */
 // stolen function to check if the iserv css files are there
 function isCSSthere() {
   let is = false;
@@ -6,6 +7,7 @@ function isCSSthere() {
     if (document.styleSheets[i].href !== null) {
       if (document.styleSheets[i].href.includes("/css/iserv.")) {
         is = true;
+        console.log("Du befindest dich zur Zeit auf einem IServ Schulserver!");
         break;
       }
     }
@@ -30,7 +32,7 @@ function docReady(fn) {
 let url = extractDomain(location.href);
 
 chrome.storage.local.get(
-  [url, "nightServ_enabled", "nightservdesign"],
+  [url, "nightServ_enabled", "active", "img"],
   (res) => {
     if (res[url] == null)
       docReady(() => {
@@ -44,26 +46,26 @@ chrome.storage.local.get(
       });
 
     if (res[url] && res["nightServ_enabled"]) {
-      readFile(chrome.runtime.getURL("themes/layouts.json"), (d) => {
-        let data = JSON.parse(d);
-        if (
-          data.layouts[res.nightservdesign.layout].themes[
-            res.nightservdesign.theme
-          ].iTheme
-        ) {
-          let img = document.createElement("img");
-          img.src =
-            data.layouts[res.nightservdesign.layout].themes[
-              res.nightservdesign.theme
-            ].iTimg;
-          img.id = "nightservthemeimage";
-          document.body.prepend(img);
-        }
-      });
+      if (res.active == "picture") {
+        let img = document.createElement("img");
+        img.src = res.img;
+        img.id = "nightservthemeimage";
+        document.body.prepend(img);
+      }
 
       //chage some things in the page
       docReady(() => {
-        console.log("danke, dass du nightServ verwendest!")
+        let msg = "%c Thanks for using nightServ!";
+        let styles = [
+          "font-size: 1.5em",
+          "font-family: monospace",
+          "background: transparent",
+          "display: inline - block",
+          "color: #fff",
+          "padding: 8px 19px",
+          "border: 2px dashed;"
+        ].join(";")
+        console.log(msg, styles);
         //replace iserv logo
         let uri = chrome.runtime.getURL("assets/nightserv.png");
         let el = document.getElementById("sidebar-nav-header");
@@ -96,6 +98,7 @@ chrome.storage.local.get(
           let buttoncontent = document.createElement("a");
           let iur = chrome.runtime.getURL("pages/settings/settings.html");
           buttoncontent.setAttribute("href", iur);
+          buttoncontent.setAttribute("target", "_blank");
 
           let buttonimg = document.createElement("img");
           buttonimg.setAttribute("class", "nav-svg-icon");
@@ -106,12 +109,26 @@ chrome.storage.local.get(
           buttonlabel.setAttribute("class", "item-label");
           buttonlabel.appendChild(document.createTextNode("nightServ Themes"));
           buttoncontent.appendChild(buttonlabel);
-          let badge = document.createElement("span");
-          badge.textContent = "NEU!";
-          badge.id = "nsbadgenew";
-          buttoncontent.appendChild(badge);
           button.appendChild(buttoncontent);
           el.insertBefore(button, el.firstChild);
+
+          // insert tip
+          if (Math.random() > 0.85) {
+            let tip = document.createElement("div");
+            tip.classList.add("panel", "panel-dashboard", "panel-default");
+            let tipheader = document.createElement("div");
+            tipheader.classList.add("panel-heading");
+            let title = document.createElement("h2");
+            title.classList.add("panel-title");
+            title.innerText = "nightServ";
+            tipheader.appendChild(title);
+            tip.appendChild(tipheader);
+            let tipbody = document.createElement("div");
+            tipbody.classList.add("panel-body");
+            tipbody.innerHTML = chrome.i18n.getMessage("tip");
+            tip.appendChild(tipbody);
+            document.getElementById("idesk-sidebar").prepend(tip);
+          }
         }
       });
     }

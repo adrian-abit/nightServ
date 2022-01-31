@@ -1,33 +1,50 @@
 {
   "name": "__MSG_name__",
   "description": "__MSG_desc__",
-  "version": "110.7",
-  "author": "Adrian @ abit systems",
-  "version_name": "1.1 rev7",
-  "manifest_version": 2,
+  "version": "200",
+  "author": "Adrian Bit",
+  "version_name": "2",
+  "manifest_version": 3,
   "default_locale": "de",
   "web_accessible_resources": [
-    "assets/nightserv.png",
-    "assets/nightservN48.png",
-    "assets/ns24.png",
-    "pages/settings/settings.html",
-    "pages/settings/settings.js",
-    "pages/settings/settings.css",
-    "themes/layouts.json"
+    {
+      "resources": [
+        "assets/nightserv.png",
+        "assets/nightservN48.png",
+        "assets/ns24.png",
+        "pages/settings/settings.html",
+        "pages/settings/settings.js",
+        "pages/settings/settings.css",
+        "themes/layouts.json"
+      ],
+      "matches": ["http://*/*", "https://*/*"]
+    }
   ],
-  "permissions": ["storage", "tabs", "*://*/*"],
-  "browser_action": {
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting",
+    "unlimitedStorage"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "action": {
     "default_popup": "pages/popup/popup.html",
     "default_icon": "assets/nightservN128.png"
   },
   "background": {
-    "scripts": ["addon.js"],
-    "persistent": false
+    "service_worker": "addon.js"
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["content.js"],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_start"
     }
   ],

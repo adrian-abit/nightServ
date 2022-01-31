@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="settings.css" />
-    <title>nightServ Themes</title>
-  </head>
-  <body>
-    <div id="overlay">
-      <div id="lds-ellipsis">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="settings.css" />
+  <title>nightServ Themes</title>
+</head>
+
+<body>
+  <div id="overlay">
+    <div class="lds-ripple">
+      <div></div>
+      <div></div>
     </div>
-    <div id="badge"><b>BETA</b></div>
+  </div>
+  <nav>
+    <div id="badge"><b>V2</b></div>
     <div id="content">
-      <img id="header" src="nightserv.png" />
-      <button id="feedbackbtn">Feedback</button>
-      <button id="reviewbtn">Review</button>
-      <button id="coffeebtn">Buy me a coffee</button>
-      <div id="layouts"></div>
+      <img id="header" src="nightserv.png" alt="NightServ Logo" />
+      <a id="feedback" target="_blank" href="https://forms.gle/ujXPBPCMFgsk9uDp6">Feedback</a>
+      <section id="layouts">
+        <h1 id="althemes">Verfügbare Themes</h1>
+        <div id="themes"></div>
+      </section>
+      <section id="ownimage">
+        <h1 id="ownheader">Eigenes Bild als Hintergrund</h1>
+        <div>
+          <img id="imgprev" src="https://content.nightserv.cc/nightserv/2/placeholder.png">
+          <div>
+            <input type="text" placeholder="URL des Bildes" id="imgurl">
+            <button id="imgselect">Auswählen</button>
+          </div>
+        </div>
+      </section>
     </div>
-    <h1 id="mocs">Mehr Themes folgen...</h1>
-    <footer>
-      <div>
-        <a style="font-size: 14px"
-          >nightServ entwickelt von Adrian Bit @ abit systems - </a
-        ><a id="abit" style="font-size: 14px" href="https://nightserv.cc">nightserv.cc</a>
-      </div>
-    </footer>
-    <script src="settings.js"></script>
-  </body>
+  </nav>
+  <footer>
+    <div>
+      <a style="font-size: 14px">nightServ entwickelt von Adrian Bit @ abit systems - </a><a id="abit"
+        style="font-size: 14px" href="https://nightserv.cc">nightserv.cc</a>
+    </div>
+  </footer>
+  <script src="settings.js"></script>
+</body>
+
 </html>
