@@ -13,5 +13,17 @@
   },
   "tip" : {
     "message": "Hey! Danke, dass du nightServ nutzt und mich dadurch unterstützt!<br><br>Gefällt dir nightServ? Dann würde ich mich sehr über eine Bewertung im Addon-Store freuen.<br>Oder teile nightServ mit deinen Freunden und Bekannten die davon profitieren könnten!<br><br>Hast du Probleme, Feedback oder Vorschläge? Dann kontaktiere mich einfach hier: <a href='https://forms.gle/ujXPBPCMFgsk9uDp6'>Feedback</a>"
+  },
+  "ownimage" : {
+    "message": "Eigenes Bild als Hintergrund"
+  }, 
+  "changeimage": {
+    "message" : "Bild Ändern"
+  },
+  "apply": {
+    "message" : "Anwenden"
+  }, 
+  "urlerr": {
+    "message" : "Bitte gebe eine richtige URL an.\nStelle sicher, dass die URL mit .png, .jpg, .jpeg oder .gif endet.\n"
   }
 }

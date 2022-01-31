@@ -129,7 +129,7 @@ div#badge {
   }
 
 
-  button, input{
+  button, input, #feedback{
     background: transparent;
     color: #fff;
     font-size: 22px;
@@ -138,11 +138,12 @@ div#badge {
     border-radius: 10px;
     cursor: pointer;
     margin-right: 10px;
+    text-decoration: none;
   }
 
   input {cursor: text}
 
-  button:hover, input:hover{
+  button:hover, input:hover, #feedback:hover{
     border: 3px solid var(--text-link-blue);
   }
 

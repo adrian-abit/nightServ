@@ -10,7 +10,7 @@ reloadThemesAndOptions().then(() => {
     document.getElementById("imgselect").addEventListener("click", () => {
       let input = document.getElementById("imgurl");
       if(input.value == "" || !(input.value.endsWith(".png") || input.value.endsWith(".jpeg") || input.value.endsWith(".jpg") || input.value.endsWith(".gif"))){
-        alert("Bitte gebe eine richtige URL an.\nStelle sicher, dass die URL mit .png, .jpg, .jpeg oder .gif endet.\n");
+        alert(chrome.i18n.getMessage("urlerr"));
         return;
       } else {
         chrome.storage.local.set({"active": "picture", "img" : input.value});
@@ -82,12 +82,14 @@ async function populate() {
           document.getElementById("imgprev").src = data.img;
           input.value = data.img;
           if(data.active == "picture") {
-            button.innerText = "Bild Ändern";
+            button.innerText = chrome.i18n.getMessage("changeimage");
             document.getElementById("ownimage").classList.add("selected");
-          }
+          } else button.innerText = chrome.i18n.getMessage("apply");
         }
       }); 
 
+      document.getElementById("althemes").innerHTML = chrome.i18n.getMessage("availablethemes");
+      document.getElementById("ownheader").innerHTML = chrome.i18n.getMessage("ownimage");
 
       resolve();
     });
