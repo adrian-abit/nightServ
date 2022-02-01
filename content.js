@@ -113,7 +113,8 @@ chrome.storage.local.get(
           el.insertBefore(button, el.firstChild);
 
           // insert tip
-          if (Math.random() > 0.85) {
+          let sidebar = document.getElementById("idesk-sidebar");
+          if (sidebar != null && Math.random() > 0.85) {
             let tip = document.createElement("div");
             tip.classList.add("panel", "panel-dashboard", "panel-default");
             let tipheader = document.createElement("div");
@@ -127,7 +128,7 @@ chrome.storage.local.get(
             tipbody.classList.add("panel-body");
             tipbody.innerHTML = chrome.i18n.getMessage("tip");
             tip.appendChild(tipbody);
-            document.getElementById("idesk-sidebar").prepend(tip);
+            sidebar.prepend(tip);
           }
         }
       });
