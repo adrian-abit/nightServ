@@ -67,14 +67,20 @@ chrome.storage.local.get(
         ].join(";")
         console.log(msg, styles);
         //replace iserv logo
+        console.log("replace")
         let uri = chrome.runtime.getURL("assets/nightserv.png");
         let el = document.getElementById("sidebar-nav-header");
+        console.log(el);
         if (el != null) {
-          let img =
-            el.firstChild.nextElementSibling.firstChild.nextElementSibling
-              .firstChild.nextElementSibling;
+          let source =
+          el.firstChild.nextElementSibling.firstChild.nextElementSibling
+            .firstChild.nextElementSibling.firstChild.nextElementSibling;
+          let img = source.nextElementSibling;
+              console.log(img);
           img.src = uri;
           img.srcset = uri;
+          source.srcset = uri;
+          source.type = "image/png";
           img.alt = "nightServ";
           img.width = 120;
           img.removeAttribute("height");
