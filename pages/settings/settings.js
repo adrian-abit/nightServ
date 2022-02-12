@@ -9,11 +9,11 @@ reloadThemesAndOptions().then(() => {
     }
     document.getElementById("imgselect").addEventListener("click", () => {
       let input = document.getElementById("imgurl");
-      if(input.value == "" || !(input.value.endsWith(".png") || input.value.endsWith(".jpeg") || input.value.endsWith(".jpg") || input.value.endsWith(".gif"))){
+      if (input.value == "" || !(input.value.endsWith(".png") || input.value.endsWith(".jpeg") || input.value.endsWith(".jpg") || input.value.endsWith(".gif"))) {
         alert(chrome.i18n.getMessage("urlerr"));
         return;
       } else {
-        chrome.storage.local.set({"active": "picture", "img" : input.value});
+        chrome.storage.local.set({ "active": "picture", "img": input.value });
         reloadThemesAndOptions().then(location.reload());
       }
     });
@@ -75,18 +75,19 @@ async function populate() {
       });
 
       chrome.storage.local.get(["img", "active"], (data) => {
-        if(data.img != null){
+        let button = document.getElementById("imgselect");
+        button.innerText = chrome.i18n.getMessage("apply");
+        if (data.img != null) {
           let input = document.getElementById("imgurl");
-          let button = document.getElementById("imgselect");
 
           document.getElementById("imgprev").src = data.img;
           input.value = data.img;
-          if(data.active == "picture") {
+          if (data.active == "picture") {
             button.innerText = chrome.i18n.getMessage("changeimage");
             document.getElementById("ownimage").classList.add("selected");
-          } else button.innerText = chrome.i18n.getMessage("apply");
+          }
         }
-      }); 
+      });
 
       document.getElementById("althemes").innerHTML = chrome.i18n.getMessage("availablethemes");
       document.getElementById("ownheader").innerHTML = chrome.i18n.getMessage("ownimage");

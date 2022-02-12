@@ -67,14 +67,20 @@ chrome.storage.local.get(
         ].join(";")
         console.log(msg, styles);
         //replace iserv logo
+        console.log("replace")
         let uri = chrome.runtime.getURL("assets/nightserv.png");
         let el = document.getElementById("sidebar-nav-header");
+        console.log(el);
         if (el != null) {
-          let img =
-            el.firstChild.nextElementSibling.firstChild.nextElementSibling
-              .firstChild.nextElementSibling;
+          let source =
+          el.firstChild.nextElementSibling.firstChild.nextElementSibling
+            .firstChild.nextElementSibling.firstChild.nextElementSibling;
+          let img = source.nextElementSibling;
+              console.log(img);
           img.src = uri;
           img.srcset = uri;
+          source.srcset = uri;
+          source.type = "image/png";
           img.alt = "nightServ";
           img.width = 120;
           img.removeAttribute("height");
@@ -113,7 +119,8 @@ chrome.storage.local.get(
           el.insertBefore(button, el.firstChild);
 
           // insert tip
-          if (Math.random() > 0.85) {
+          let sidebar = document.getElementById("idesk-sidebar");
+          if (sidebar != null && Math.random() > 0.85) {
             let tip = document.createElement("div");
             tip.classList.add("panel", "panel-dashboard", "panel-default");
             let tipheader = document.createElement("div");
@@ -127,7 +134,7 @@ chrome.storage.local.get(
             tipbody.classList.add("panel-body");
             tipbody.innerHTML = chrome.i18n.getMessage("tip");
             tip.appendChild(tipbody);
-            document.getElementById("idesk-sidebar").prepend(tip);
+            sidebar.prepend(tip);
           }
         }
       });
