@@ -55,22 +55,10 @@ chrome.storage.local.get(
 
       //chage some things in the page
       docReady(() => {
-        let msg = "%c Thanks for using nightServ!";
-        let styles = [
-          "font-size: 1.5em",
-          "font-family: monospace",
-          "background: transparent",
-          "display: inline - block",
-          "color: #fff",
-          "padding: 8px 19px",
-          "border: 2px dashed;"
-        ].join(";")
+
         //replace iserv logo
         let uri = chrome.runtime.getURL("assets/nightserv.png");
-        let el = document.getElementById("sidebar-nav-header");
-        console.log(el);
         let logolight = document.querySelector("li.sidebar-brand a picture.light");
-        console.log(logolight);
         logolight.children[0].srcset = uri;
         logolight.children[0].type = "image/png";
         logolight.children[1].src = uri;
@@ -86,6 +74,17 @@ chrome.storage.local.get(
         logodark.children[1].alt = "nightServ";
         logodark.children[1].width = 120;
         logodark.children[1].removeAttribute("height");
+
+        let msg = "%c Thanks for using nightServ!";
+        let styles = [
+          "font-size: 1.5em",
+          "font-family: monospace",
+          "background: transparent",
+          "display: inline - block",
+          "color: #fff",
+          "padding: 8px 19px",
+          "border: 2px dashed;"
+        ].join(";")
 
         //change school text
         el = document.getElementsByClassName("brand");
