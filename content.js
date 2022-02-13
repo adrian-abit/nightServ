@@ -65,26 +65,27 @@ chrome.storage.local.get(
           "padding: 8px 19px",
           "border: 2px dashed;"
         ].join(";")
-        console.log(msg, styles);
         //replace iserv logo
-        console.log("replace")
         let uri = chrome.runtime.getURL("assets/nightserv.png");
         let el = document.getElementById("sidebar-nav-header");
         console.log(el);
-        if (el != null) {
-          let source =
-          el.firstChild.nextElementSibling.firstChild.nextElementSibling
-            .firstChild.nextElementSibling.firstChild.nextElementSibling;
-          let img = source.nextElementSibling;
-              console.log(img);
-          img.src = uri;
-          img.srcset = uri;
-          source.srcset = uri;
-          source.type = "image/png";
-          img.alt = "nightServ";
-          img.width = 120;
-          img.removeAttribute("height");
-        }
+        let logolight = document.querySelector("li.sidebar-brand a picture.light");
+        console.log(logolight);
+        logolight.children[0].srcset = uri;
+        logolight.children[0].type = "image/png";
+        logolight.children[1].src = uri;
+        logolight.children[1].srcset = uri;
+        logolight.children[1].alt = "nightServ";
+        logolight.children[1].width = 120;
+        logolight.children[1].removeAttribute("height");
+        let logodark = document.querySelector("li.sidebar-brand a picture.dark")
+        logodark.children[0].srcset = uri;
+        logodark.children[0].type = "image/png";
+        logodark.children[1].src = uri;
+        logodark.children[1].srcset = uri;
+        logodark.children[1].alt = "nightServ";
+        logodark.children[1].width = 120;
+        logodark.children[1].removeAttribute("height");
 
         //change school text
         el = document.getElementsByClassName("brand");
