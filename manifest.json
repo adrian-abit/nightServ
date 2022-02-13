@@ -1,9 +1,9 @@
 {
   "name": "__MSG_name__",
   "description": "__MSG_desc__",
-  "version": "210",
+  "version": "211",
   "author": "Adrian Bit",
-  "version_name": "2.1",
+  "version_name": "2.1.1",
   "manifest_version": 3,
   "default_locale": "de",
   "web_accessible_resources": [
